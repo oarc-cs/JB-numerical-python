@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Jupyter Book: Numerical Python &#8212; Numerical Python Part 1</title>
+    <title>Jupyter Book: Numerical Python &#8212; Numerical Python Part 1,2 &amp; 3</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Numerical Programming with Python, Part 1: Python Basics" href="Start-Here.html" />
@@ -96,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Numerical Python Part 1</h1>
+      <h1 class="site-logo" id="site-title">Numerical Python Part 1,2 & 3</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -121,6 +123,47 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="stock-report.html">
    Example:  grabbing time series data from a public API (here Yahoo finance)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-numpy-scipy.html">
+   Numerical Programming with Python, Part 2:
+   <a class="tocSkip">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-matplotlib.html">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-pandas.html">
+   Basic info
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-symbolic-math.html">
+   Numerical Computing with Python, Part 3:   Numerical Modeling
+   <a class="tocSkip">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-fitting-and-interpolating.html">
+   Our familiar example from previous weeks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-ODEs.html">
+   Harmonic oscillator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-image-teaser.html">
+   And now for something completely different
+   <a class="tocSkip">
+   </a>
   </a>
  </li>
 </ul>
@@ -316,6 +359,36 @@ title="Print to PDF"
 <li class="toctree-l1"><a class="reference internal" href="Start-Here.html#functions">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Start-Here.html#modules">Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stock-report.html">Example:  grabbing time series data from a public API (here Yahoo finance)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html">Numerical Programming with Python, Part 2:   <a class="tocSkip"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#intro-to-numpy-scipy-and-pandas-and-matplotlib-a-class-tocskip">Intro to NumPy, SciPy, and Pandas (and Matplotlib)  <a class="tocSkip"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#brief-review-from-the-end-of-last-week">Brief review from the end of last week</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#basic-operations-with-n-dimensional-arrays">basic operations with n-dimensional arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#indexing-and-slicing">Indexing and slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#creating-some-arrays">creating some arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#broadcasting">Broadcasting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#operations-along-axes">operations along axes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#numpy-submodules">numpy submodules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#scipy">SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-matplotlib.html">Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-pandas.html">Basic info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#we-will-come-back-to-nulls-and-dtypes">We will come back to nulls and Dtypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#selecting">Selecting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#boolean-indexing">Boolean indexing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#missing-data">Missing data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#calculating-values-and-aggregating">Calculating values and aggregating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#final-fun-estimating-pi-again">Final fun - estimating <span class="math notranslate nohighlight">\(\pi\)</span> (again)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#references">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-symbolic-math.html">Numerical Computing with Python, Part 3:   Numerical Modeling  <a class="tocSkip"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-fitting-and-interpolating.html">Our familiar example from previous weeks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-fitting-and-interpolating.html#on-to-scipy">On to SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-fitting-and-interpolating.html#interpolation">Interpolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-ODEs.html">Harmonic oscillator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-ODEs.html#damped-harmonic-oscillator">Damped harmonic oscillator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-ODEs.html#lorenz-equations">Lorenz Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-image-teaser.html">And now for something completely different <a class="tocSkip"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-image-teaser.html#feature-extraction-edge-detection">Feature extraction (edge detection)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-image-teaser.html#segmentation">Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-image-teaser.html#spectral-clustering-using-advanced-libraries-such-as-scikit-learn">Spectral clustering (using advanced libraries such as scikit-learn)</a></li>
 </ul>
 </div>
 </section>
