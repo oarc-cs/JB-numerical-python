@@ -198,13 +198,11 @@ print(parrotreturn + return3)
 # clean up the quote so that the formatting is consistent
 
 
-
 # In[24]:
 
 
 # put the entire string into one variable
 # and use the bracket syntax with slicing to print only the middle sentence
-
 
 
 # ## Lists
