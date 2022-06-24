@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Jupyter Book: Numerical Python &#8212; Numerical Python Part 1,2 &amp; 3</title>
+    <title>&lt;no title&gt; &#8212; Numerical Python Part 1, 2 &amp; 3</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,9 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Numerical Programming with Python, Part 1: Python Basics" href="Start-Here.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Numerical Python Part 1,2 & 3</h1>
+      <h1 class="site-logo" id="site-title">Numerical Python Part 1, 2 & 3</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -106,13 +107,18 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
-                    Jupyter Book: Numerical Python
+            <li class="toctree-l1">
+                <a class="reference internal" href="README.html">
+                    Winter 2021 IDRE Numerical Programming with Python Part 1, Python Basics
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Start-Here.html">
    Numerical Programming with Python, Part 1:  Python Basics
@@ -120,9 +126,16 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="stock-report.html">
-   Example:  grabbing time series data from a public API (here Yahoo finance)
+   Ex. Grabbing Time Series Data From a Public API
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-numpy-scipy.html">
    Numerical Programming with Python, Part 2:
@@ -140,11 +153,16 @@ const thebe_selector_output = ".output, .cell_output"
    Basic info
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-symbolic-math.html">
-   Numerical Computing with Python, Part 3:   Numerical Modeling
-   <a class="tocSkip">
-   </a>
+   Numerical Modeling
   </a>
  </li>
  <li class="toctree-l1">
@@ -319,23 +337,50 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Jupyter Book: Numerical Python</h1>
+                <h1><no title></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -343,54 +388,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="jupyter-book-numerical-python">
-<h1>Jupyter Book: Numerical Python<a class="headerlink" href="#jupyter-book-numerical-python" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Start-Here.html">Numerical Programming with Python, Part 1:  Python Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Start-Here.html#various-ways-to-run-python-code">Various ways to run Python code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Start-Here.html#calculating">Calculating</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Start-Here.html#strings">Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Start-Here.html#lists">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Start-Here.html#tuples-sets-and-dictionaries">Tuples, sets, and dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Start-Here.html#conditionals-and-loops">Conditionals and Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Start-Here.html#functions">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Start-Here.html#modules">Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stock-report.html">Example:  grabbing time series data from a public API (here Yahoo finance)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html">Numerical Programming with Python, Part 2:   <a class="tocSkip"></a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#intro-to-numpy-scipy-and-pandas-and-matplotlib-a-class-tocskip">Intro to NumPy, SciPy, and Pandas (and Matplotlib)  <a class="tocSkip"></a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#brief-review-from-the-end-of-last-week">Brief review from the end of last week</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#basic-operations-with-n-dimensional-arrays">basic operations with n-dimensional arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#indexing-and-slicing">Indexing and slicing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#creating-some-arrays">creating some arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#broadcasting">Broadcasting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#operations-along-axes">operations along axes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#numpy-submodules">numpy submodules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-numpy-scipy.html#scipy">SciPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-matplotlib.html">Matplotlib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-pandas.html">Basic info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#we-will-come-back-to-nulls-and-dtypes">We will come back to nulls and Dtypes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#selecting">Selecting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#boolean-indexing">Boolean indexing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#missing-data">Missing data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#calculating-values-and-aggregating">Calculating values and aggregating</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#final-fun-estimating-pi-again">Final fun - estimating <span class="math notranslate nohighlight">\(\pi\)</span> (again)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-pandas.html#references">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-symbolic-math.html">Numerical Computing with Python, Part 3:   Numerical Modeling  <a class="tocSkip"></a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-fitting-and-interpolating.html">Our familiar example from previous weeks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-fitting-and-interpolating.html#on-to-scipy">On to SciPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-fitting-and-interpolating.html#interpolation">Interpolation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-ODEs.html">Harmonic oscillator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-ODEs.html#damped-harmonic-oscillator">Damped harmonic oscillator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-ODEs.html#lorenz-equations">Lorenz Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-image-teaser.html">And now for something completely different <a class="tocSkip"></a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-image-teaser.html#feature-extraction-edge-detection">Feature extraction (edge detection)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-image-teaser.html#segmentation">Segmentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-image-teaser.html#spectral-clustering-using-advanced-libraries-such-as-scikit-learn">Spectral clustering (using advanced libraries such as scikit-learn)</a></li>
-</ul>
-</div>
-</section>
-
+  
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -418,13 +416,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="Start-Here.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Numerical Programming with Python, Part 1:  Python Basics</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

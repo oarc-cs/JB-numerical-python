@@ -2,14 +2,29 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
-chapters:
-- file: Start-Here
-- file: stock-report 
-- file: 01-numpy-scipy
-- file: 02-matplotlib
-- file: 03-pandas
-- file: 01-symbolic-math
-- file: 02-fitting-and-interpolating
-- file: 03-ODEs
-- file: 04-image-teaser
+root: README
+parts:
+- caption: Part 1 
+  chapters:
+  - file: Start-Here
+    title: Python Basics
+  - file: stock-report
+    title: Ex. Grabbing Time Series Data From a Public API
+- caption: Part 2
+  chapters:
+  - file: 01-numpy-scipy
+    title: Intro to Numpy, SciPy, Pandas, and Matplotlib
+  - file: 02-matplotlib
+    title: Matplotlib
+  - file: 03-pandas
+    title: Basic Info
+- caption: Part 3
+  chapters:
+  - file: 01-symbolic-math
+    title: Numerical Modeling
+  - file: 02-fitting-and-interpolating
+    title: Example
+  - file: 03-ODEs
+    title: Unknown
+  - file: 04-image-teaser
+    title: Unknown
