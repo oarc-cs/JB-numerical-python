@@ -3,6 +3,7 @@
 
 format: jb-book
 root: README
+title: Winter 2021 IDRE Numerical Programming with Python
 parts:
 - caption: Part 1 
   chapters:

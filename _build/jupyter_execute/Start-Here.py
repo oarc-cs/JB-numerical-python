@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Numerical Programming with Python, Part 1:  Python Basics
+# # Numerical Programming with Python, Part 1:  Python Basics
 
 # ![image.png](attachment:image.png)
 
