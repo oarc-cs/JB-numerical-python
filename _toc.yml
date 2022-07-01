@@ -3,29 +3,31 @@
 
 format: jb-book
 root: README
-title: Winter 2021 IDRE Numerical Programming with Python
+title: Numerical Programming with Python
 parts:
-- caption: Part 1 
+- caption: Fundamentals of Python 
   chapters:
   - file: Start-Here
-    title: Python Basics
+    title: Python Basics with Examples
   - file: stock-report
     title: Ex. Grabbing Time Series Data From a Public API
-- caption: Part 2
+- caption: Symbolic Math
   chapters:
   - file: 01-numpy-scipy
-    title: Intro to Numpy, SciPy, Pandas, and Matplotlib
-  - file: 02-matplotlib
-    title: Matplotlib
-  - file: 03-pandas
-    title: Basic Info
-- caption: Part 3
+    title: Numpy and SciPy
+- file: 01-symbolic-math
+    title: Symbolic Math with SymPy
+- file: 03-ODEs
+    title: Ordinary Differential Equations
+- caption: Numerical Modeling
   chapters:
-  - file: 01-symbolic-math
-    title: Numerical Modeling
   - file: 02-fitting-and-interpolating
-    title: Example
-  - file: 03-ODEs
-    title: Unknown
+    title: Fitting and Interpolating
   - file: 04-image-teaser
-    title: Unknown
+    title: Image Processing
+- caption: Data Visualization
+  chapters:
+  - file: Matplotlib
+	title: Matplotlib
+  - file: 03-pandas
+	title: Pandas

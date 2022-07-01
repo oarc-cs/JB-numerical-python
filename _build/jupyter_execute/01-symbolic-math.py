@@ -5,200 +5,200 @@
 #     
 # To start, let's do a bit of symbolic math to get the gears churning...
 
-# In[1]:
+# In[ ]:
 
 
 import sympy
 sympy.init_printing()
 
 
-# In[2]:
+# In[ ]:
 
 
 x = sympy.Symbol('x')
 
 
-# In[3]:
+# In[ ]:
 
 
 x
 
 
-# In[4]:
+# In[ ]:
 
 
 x**2
 
 
-# In[5]:
+# In[ ]:
 
 
 expr = x**4 + x**3 + x**2 + x + 1
 
 
-# In[6]:
+# In[ ]:
 
 
 expr
 
 
-# In[7]:
+# In[ ]:
 
 
 expr.diff(x)
 
 
-# In[8]:
+# In[ ]:
 
 
 expr.diff(x,3)
 
 
-# In[9]:
+# In[ ]:
 
 
 expr.diff(x,3).expand()
 
 
-# In[10]:
+# In[ ]:
 
 
 expr.integrate(x)
 
 
-# In[11]:
+# In[ ]:
 
 
 expr.integrate((x,0,3))
 
 
-# In[12]:
+# In[ ]:
 
 
 sympy.integrate(expr,x)
 
 
-# In[13]:
+# In[ ]:
 
 
 sympy.integrate(expr,(x,0,3))
 
 
-# In[14]:
+# In[ ]:
 
 
 sympy.cos(x)
 
 
-# In[15]:
+# In[ ]:
 
 
 sympy.cos(x).series(x,n=10)
 
 
-# In[16]:
+# In[ ]:
 
 
 sympy.cos(x).integrate(x)
 
 
-# In[17]:
+# In[ ]:
 
 
 sympy.tan(x)
 
 
-# In[18]:
+# In[ ]:
 
 
 sympy.tan(x).integrate(x)
 
 
-# In[19]:
+# In[ ]:
 
 
 n = sympy.symbols("n")
 
 
-# In[20]:
+# In[ ]:
 
 
 from sympy import oo
 
 
-# In[21]:
+# In[ ]:
 
 
 x = sympy.Sum(1/(n**2), (n, 1, oo))
 
 
-# In[22]:
+# In[ ]:
 
 
 x
 
 
-# In[23]:
+# In[ ]:
 
 
 x = sympy.Symbol('x')
 
 
-# In[24]:
+# In[ ]:
 
 
 a = sympy.Sum(x**n/(sympy.factorial(n)), (n, 0, oo))
 
 
-# In[25]:
+# In[ ]:
 
 
 a
 
 
-# In[26]:
+# In[ ]:
 
 
 a.doit()
 
 
-# In[27]:
+# In[ ]:
 
 
 sympy.Matrix([1,2])
 
 
-# In[28]:
+# In[ ]:
 
 
 import numpy as np
 
 
-# In[29]:
+# In[ ]:
 
 
 b = np.array([[1,2],[3,4]])
 
 
-# In[30]:
+# In[ ]:
 
 
 b
 
 
-# In[31]:
+# In[ ]:
 
 
 m = sympy.Matrix(b)
 
 
-# In[32]:
+# In[ ]:
 
 
 m
 
 
-# In[33]:
+# In[ ]:
 
 
 type(m)

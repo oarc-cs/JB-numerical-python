@@ -1,4 +1,4 @@
-# Winter 2021 IDRE Numerical Programming with Python 
+# Numerical Programming with Python 
 
 This repository is maintained by Ben Winjum for use in UCLA IDRE's introductory training class.
 
@@ -10,4 +10,6 @@ This repository is maintained by Ben Winjum for use in UCLA IDRE's introductory 
 
 * Non UCLA participants (or anyone who has trouble with the above):
   * [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/benjum/numerical-python-part1/HEAD) 
+
+* Note: the best way to learn is to practice, therefore we recommend executing the cells to familiarize yourself with this new language and information 
 

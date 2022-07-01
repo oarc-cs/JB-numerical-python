@@ -10,9 +10,9 @@
 #     
 # The following is a brief teaser for Image Processing
 
-# # Feature extraction (edge detection)
+# ### Feature extraction (edge detection)
 
-# In[1]:
+# In[ ]:
 
 
 import numpy as np
@@ -61,9 +61,9 @@ plt.subplots_adjust(wspace=0.02, hspace=0.02, top=1, bottom=0, left=0, right=0.9
 plt.show()
 
 
-# # Segmentation
+# ## Segmentation
 
-# In[2]:
+# In[ ]:
 
 
 import numpy as np
@@ -85,9 +85,9 @@ img = mask + 0.3*np.random.randn(*mask.shape)
 
 binary_img = img > 0.5
 
-# Remove small white regions
+## Remove small white regions
 open_img = ndimage.binary_opening(binary_img)
-# Remove small black hole
+## Remove small black hole
 close_img = ndimage.binary_closing(open_img)
 
 plt.figure(figsize=(12, 3))
@@ -113,9 +113,9 @@ plt.subplots_adjust(wspace=0.02, hspace=0.3, top=1, bottom=0.1, left=0, right=1)
 plt.show()
 
 
-# # Spectral clustering (using advanced libraries such as scikit-learn)
+# ## Spectral clustering (using advanced libraries such as scikit-learn)
 
-# In[3]:
+# In[ ]:
 
 
 import numpy as np
@@ -125,7 +125,7 @@ from sklearn.feature_extraction import image
 from sklearn.cluster import spectral_clustering
 
 
-# In[4]:
+# In[ ]:
 
 
 l = 100
@@ -144,19 +144,19 @@ circle3 = (x - center3[0])**2 + (y - center3[1])**2 < radius3**2
 circle4 = (x - center4[0])**2 + (y - center4[1])**2 < radius4**2
 
 
-# In[5]:
+# In[ ]:
 
 
 circle1.shape
 
 
-# In[6]:
+# In[ ]:
 
 
 circle2.shape
 
 
-# In[7]:
+# In[ ]:
 
 
 img = circle1 + circle2 + circle3 + circle4
@@ -165,16 +165,16 @@ img = img.astype(float)
 
 img += 1 + 0.2*np.random.randn(*img.shape)
 
-# Convert the image into a graph with the value of the gradient on the
-# edges.
+## Convert the image into a graph with the value of the gradient on the
+## edges.
 graph = image.img_to_graph(img, mask=mask)
 
-# Take a decreasing function of the gradient: we take it weakly
-# dependant from the gradient the segmentation is close to a voronoi
+## Take a decreasing function of the gradient: we take it weakly
+## dependant from the gradient the segmentation is close to a voronoi
 graph.data = np.exp(-graph.data / graph.data.std())
 
-# Force the solver to be arpack, since amg is numerically
-# unstable on this example
+## Force the solver to be arpack, since amg is numerically
+## unstable on this example
 labels = spectral_clustering(graph, n_clusters=4)
 label_im = -np.ones(mask.shape)
 label_im[mask] = labels

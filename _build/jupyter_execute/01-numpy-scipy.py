@@ -19,7 +19,7 @@
 # 
 # $$\text{Balance}(y) = p(1 + r)^y + c\left[\frac{(1 + r)^{y+1} - (1 + r)}{r} \right]$$
 
-# In[1]:
+# In[ ]:
 
 
 def investment_balance(principal,rate,year,contribution):
@@ -31,7 +31,7 @@ def investment_balance(principal,rate,year,contribution):
     return balance
 
 
-# In[2]:
+# In[ ]:
 
 
 investment_balance(rate=5, principal=1000, contribution=100, year=1)
@@ -39,13 +39,13 @@ investment_balance(rate=5, principal=1000, contribution=100, year=1)
 
 # ## Modules
 
-# In[3]:
+# In[ ]:
 
 
 import benpy
 
 
-# In[4]:
+# In[ ]:
 
 
 benpy.compound_calculator(rate=5, principal=1000, contribution=100, year=1)
@@ -53,7 +53,7 @@ benpy.compound_calculator(rate=5, principal=1000, contribution=100, year=1)
 
 # ## Using these to look at series of data
 
-# In[5]:
+# In[ ]:
 
 
 # set these as constants
@@ -62,13 +62,13 @@ y = 1
 c = 100
 
 
-# In[6]:
+# In[ ]:
 
 
 rates = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
-# In[7]:
+# In[ ]:
 
 
 balance = []
@@ -116,7 +116,7 @@ print(balance)
 
 # ## Using NumPy to look at series of data
 
-# In[8]:
+# In[ ]:
 
 
 # set these as constants
@@ -125,13 +125,13 @@ y = 1
 c = 100
 
 
-# In[9]:
+# In[ ]:
 
 
 rates = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
-# In[10]:
+# In[ ]:
 
 
 balance = []
@@ -144,31 +144,31 @@ print(balance)
 # This is what we might like to do:
 # `balance = benpy.compound_calculator(p,rates,y,c)`
 
-# In[11]:
+# In[ ]:
 
 
 import numpy as np
 
 
-# In[12]:
+# In[ ]:
 
 
 ratesnp = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 
-# In[13]:
+# In[ ]:
 
 
 ratesnp
 
 
-# In[14]:
+# In[ ]:
 
 
 balancenp = benpy.compound_calculator(p,ratesnp,y,c)
 
 
-# In[15]:
+# In[ ]:
 
 
 balancenp
@@ -176,37 +176,37 @@ balancenp
 
 # ### We're going to use a bit of ipython "magics" to look at timings.... this won't work in scripts, but works well here in the Jupyter notebook
 
-# In[16]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('timeit', '', 'balance = []\nfor i in rates:\n    r = i\n    balance.append(benpy.compound_calculator(p,r,y,c))')
 
 
-# In[17]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('timeit', '', 'balancenp = benpy.compound_calculator(p,ratesnp,y,c)')
 
 
-# In[18]:
+# In[ ]:
 
 
 ratesnp = np.arange(1,11)
 
 
-# In[19]:
+# In[ ]:
 
 
 ratesnp
 
 
-# In[20]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('timeit', '', 'balance = []\nfor i in range(1,10000):\n    r = i\n    balance.append(benpy.compound_calculator(p,r,y,c))')
 
 
-# In[21]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('timeit', '', 'ratesnp = np.arange(1,10000)\nbalancenp = benpy.compound_calculator(p,ratesnp,y,c)')
@@ -214,62 +214,62 @@ get_ipython().run_cell_magic('timeit', '', 'ratesnp = np.arange(1,10000)\nbalanc
 
 # # basic operations with n-dimensional arrays
 
-# In[22]:
+# In[ ]:
 
 
 ratesnp
 
 
-# In[23]:
+# In[ ]:
 
 
 a = np.array([[1,2],[3,4]])
 b = np.array([[-4,-3],[-2,-1]])
 
 
-# In[24]:
+# In[ ]:
 
 
 a
 
 
-# In[25]:
+# In[ ]:
 
 
 b
 
 
-# In[26]:
+# In[ ]:
 
 
 a+b
 
 
-# In[27]:
+# In[ ]:
 
 
 a-b
 
 
-# In[28]:
+# In[ ]:
 
 
 a/b
 
 
-# In[29]:
+# In[ ]:
 
 
 a*b
 
 
-# In[30]:
+# In[ ]:
 
 
 np.matmul(a,b)
 
 
-# In[31]:
+# In[ ]:
 
 
 # array attributes
@@ -279,7 +279,7 @@ print(a.size)
 print(a.dtype)
 
 
-# In[32]:
+# In[ ]:
 
 
 a.T
@@ -287,67 +287,67 @@ a.T
 
 # # Indexing and slicing
 
-# In[33]:
+# In[ ]:
 
 
 a[0]
 
 
-# In[34]:
+# In[ ]:
 
 
 a[0:2]
 
 
-# In[35]:
+# In[ ]:
 
 
 a[1:4]
 
 
-# In[36]:
+# In[ ]:
 
 
 a[2:4]
 
 
-# In[37]:
+# In[ ]:
 
 
 a
 
 
-# In[38]:
+# In[ ]:
 
 
 a[0:1,0]
 
 
-# In[39]:
+# In[ ]:
 
 
 a[:,0]
 
 
-# In[40]:
+# In[ ]:
 
 
 a[1,:]
 
 
-# In[41]:
+# In[ ]:
 
 
 a > 2
 
 
-# In[42]:
+# In[ ]:
 
 
 a[a > 2]
 
 
-# In[43]:
+# In[ ]:
 
 
 a[a % 2 == 0]
@@ -355,44 +355,44 @@ a[a % 2 == 0]
 
 # # creating some arrays
 
-# In[44]:
+# In[ ]:
 
 
 np.arange(10)
 
 
-# In[45]:
+# In[ ]:
 
 
 np.arange(1,11,0.5)
 
 
-# In[46]:
+# In[ ]:
 
 
 np.arange(-1,1,0.2)
 
 
-# In[47]:
+# In[ ]:
 
 
 np.linspace(-1,1,11)
 
 
-# In[48]:
+# In[ ]:
 
 
 np.linspace(0,2*np.pi,100)
 
 
-# In[49]:
+# In[ ]:
 
 
 x = np.linspace(0,2*np.pi,100)
 y = np.cos(x)
 
 
-# In[50]:
+# In[ ]:
 
 
 y
@@ -400,37 +400,37 @@ y
 
 # Let's plot for fun.... briefly use matplotlib
 
-# In[51]:
+# In[ ]:
 
 
 import matplotlib.pyplot as plt
 
 
-# In[52]:
+# In[ ]:
 
 
 plt.plot(x,y,'ro')
 
 
-# In[53]:
+# In[ ]:
 
 
 a2 = np.arange(10).reshape((2,5))
 
 
-# In[54]:
+# In[ ]:
 
 
 a2
 
 
-# In[55]:
+# In[ ]:
 
 
 a2.reshape(10)
 
 
-# In[56]:
+# In[ ]:
 
 
 a2.reshape((3,4))

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 import numpy as np
@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 # 
 # $$\text{Balance}(y) = p(1 + r)^y + c\left[\frac{(1 + r)^{y+1} - (1 + r)}{r} \right]$$
 
-# In[2]:
+# In[ ]:
 
 
 def investment_balance(principal,rate,year,contribution):
@@ -31,86 +31,86 @@ def investment_balance(principal,rate,year,contribution):
     return balance
 
 
-# In[3]:
+# In[ ]:
 
 
 ratesnp = np.linspace(1,25,25)
 
 
-# In[4]:
+# In[ ]:
 
 
 ratesnp
 
 
-# In[5]:
+# In[ ]:
 
 
 ib = investment_balance(1000,ratesnp,10,1000)
 
 
-# In[6]:
+# In[ ]:
 
 
 plt.plot(ratesnp,ib,'ro')
 
 
-# In[7]:
+# In[ ]:
 
 
 np.polyfit(ratesnp, ib, 3)
 
 
-# In[8]:
+# In[ ]:
 
 
 p = np.poly1d(np.polyfit(ratesnp, ib, 3))
 
 
-# In[9]:
+# In[ ]:
 
 
 p
 
 
-# In[10]:
+# In[ ]:
 
 
 t = np.linspace(0, 25, 200)
 
 
-# In[11]:
+# In[ ]:
 
 
 plt.plot(ratesnp,ib,'ro',t,p(t))
 
 
-# In[12]:
+# In[ ]:
 
 
 p.coef
 
 
-# In[13]:
+# In[ ]:
 
 
 def f(x):
     return 9.68449317e-01 * (x**3) + 1.11578231e+01 * (x**2) + 7.12885916e+02 * x + 1.09010025e+04
 
 
-# In[14]:
+# In[ ]:
 
 
 plt.plot(t,f(t))
 
 
-# In[15]:
+# In[ ]:
 
 
 import ipywidgets
 
 
-# In[16]:
+# In[ ]:
 
 
 def f(order=1):
@@ -121,7 +121,7 @@ def f(order=1):
 ipywidgets.interact(f,order=(1,10))
 
 
-# In[17]:
+# In[ ]:
 
 
 x = np.linspace(0,5*np.pi,50)
@@ -130,7 +130,7 @@ y = np.sin(x) + noise
 plt.plot(x,y,'ro')
 
 
-# In[18]:
+# In[ ]:
 
 
 def f(order=1):
@@ -141,7 +141,7 @@ def f(order=1):
 ipywidgets.interact(f,order=(1,10))
 
 
-# In[19]:
+# In[ ]:
 
 
 x = np.linspace(-3*np.pi,3*np.pi,20)
@@ -150,7 +150,7 @@ y = x**3-6*x**2 + noise
 plt.plot(x,y,'ro')
 
 
-# In[20]:
+# In[ ]:
 
 
 def f(order=1):
@@ -163,13 +163,13 @@ ipywidgets.interact(f,order=(1,20))
 
 # # On to SciPy
 
-# In[21]:
+# In[ ]:
 
 
 from scipy.optimize import curve_fit
 
 
-# In[22]:
+# In[ ]:
 
 
 # use the same data from above
@@ -187,7 +187,7 @@ curve_fit(m,x,y)
 # returns the parameters and the covariance for the estimated parameters
 
 
-# In[23]:
+# In[ ]:
 
 
 # use the same data from above
@@ -205,7 +205,7 @@ c = curve_fit(m,x,y)
 plt.plot(x,y,'ro',x,m(x,c[0][0],c[0][1]))
 
 
-# In[24]:
+# In[ ]:
 
 
 ##
@@ -227,7 +227,7 @@ c = curve_fit(m,x,y)
 plt.plot(x,y,'ro',x,m(x,c[0][0],c[0][1]))
 
 
-# In[25]:
+# In[ ]:
 
 
 # %load xercise-3curve.py
@@ -235,13 +235,13 @@ plt.plot(x,y,'ro',x,m(x,c[0][0],c[0][1]))
 
 # # Interpolation
 
-# In[26]:
+# In[ ]:
 
 
 from scipy import interpolate
 
 
-# In[27]:
+# In[ ]:
 
 
 x = np.linspace(0,5*np.pi,20)
@@ -250,7 +250,7 @@ y = np.sin(x) + noise
 plt.plot(x,y,'ro')
 
 
-# In[28]:
+# In[ ]:
 
 
 linear_interp = interpolate.interp1d(x, y)
@@ -262,7 +262,7 @@ plt.plot(x,y,'ro')
 plt.plot(xlin,ylin,'b-')
 
 
-# In[29]:
+# In[ ]:
 
 
 localinterp = interpolate.interp1d(x, y, 'cubic')
@@ -274,14 +274,14 @@ plt.plot(x,y,'ro')
 plt.plot(xlocal,ylocal,'b-')
 
 
-# In[30]:
+# In[ ]:
 
 
 interp_types = ['linear','nearest','zero','slinear',
                 'quadratic','cubic','previous','next']
 
 
-# In[31]:
+# In[ ]:
 
 
 def plotinterp(kindin='linear'):
@@ -300,14 +300,14 @@ ipywidgets.interact(plotinterp,kindin=interp_types)
 
 # ## Higher dimensions, and irregularly spaced points
 
-# In[32]:
+# In[ ]:
 
 
 def f(x,y):
     return np.sin(x) + np.cos(y)
 
 
-# In[33]:
+# In[ ]:
 
 
 x = np.linspace(0,4*np.pi,50)
@@ -319,7 +319,7 @@ fig,ax = plt.subplots(figsize=(5,5))
 plt.contourf(X,Y,Z)
 
 
-# In[34]:
+# In[ ]:
 
 
 # "measured data"
@@ -328,14 +328,14 @@ ydata = np.random.uniform(0,4*np.pi,100)
 zdata = f(xdata,ydata)
 
 
-# In[35]:
+# In[ ]:
 
 
 fig,ax = plt.subplots(figsize=(5,5))
 plt.scatter(xdata, ydata, c=zdata)
 
 
-# In[36]:
+# In[ ]:
 
 
 x = np.linspace(0,4*np.pi,50)
@@ -348,19 +348,19 @@ plt.contourf(X,Y,Z)
 plt.scatter(xdata, ydata, c=zdata, edgecolors='k')
 
 
-# In[37]:
+# In[ ]:
 
 
 Zinterp = interpolate.griddata((xdata, ydata), zdata, (X, Y), method='nearest')
 
 
-# In[38]:
+# In[ ]:
 
 
 Zinterp.shape
 
 
-# In[39]:
+# In[ ]:
 
 
 fig,ax = plt.subplots(figsize=(5,5))
@@ -368,7 +368,7 @@ plt.contourf(X,Y,Zinterp)
 plt.scatter(xdata, ydata, c=zdata, edgecolors='k')
 
 
-# In[40]:
+# In[ ]:
 
 
 Zinterp = interpolate.griddata((xdata, ydata), zdata, (X, Y), method='linear')
@@ -377,7 +377,7 @@ plt.contourf(X,Y,Zinterp)
 plt.scatter(xdata, ydata, c=zdata, edgecolors='k')
 
 
-# In[41]:
+# In[ ]:
 
 
 Zinterp = interpolate.griddata((xdata, ydata), zdata, (X, Y), method='cubic')
@@ -386,7 +386,7 @@ plt.contourf(X,Y,Zinterp)
 plt.scatter(xdata, ydata, c=zdata, edgecolors='k')
 
 
-# In[42]:
+# In[ ]:
 
 
 Zinterp[0][0]

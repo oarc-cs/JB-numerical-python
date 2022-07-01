@@ -1,14 +1,14 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Numerical Programming with Python Part 1, 2 & 3
-author: The Jupyter Book Community
+title: Numerical Programming with Python 
+author: Benjamin Winjum
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: off
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -21,9 +21,8 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/abigailmori/JB-numerical-python  # Online location of your book
+  branch: main  # Which branch of the repository should be used when creating links (optional)
 
 launch_buttons:
   thebe                  : true

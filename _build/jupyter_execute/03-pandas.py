@@ -17,14 +17,14 @@
 # 
 # * Name comes from panel data, also play on python data analysis
 
-# In[1]:
+# In[ ]:
 
 
 import pandas as pd
 import numpy as np
 
 
-# In[2]:
+# In[ ]:
 
 
 titles = pd.Series(['And Now for Something Completely Different',
@@ -35,38 +35,38 @@ titles = pd.Series(['And Now for Something Completely Different',
           'Monty Python Live (Mostly)'])
 
 
-# In[3]:
+# In[ ]:
 
 
 titles
 
 
-# In[4]:
+# In[ ]:
 
 
 titles[0:2]
 
 
-# In[5]:
+# In[ ]:
 
 
 year = [1971,1975,1979,1982,1983,2014]
 
 
-# In[6]:
+# In[ ]:
 
 
 production_budget = ['100000', '400000', '4000000', None, '9000000', None]
 
 
-# In[7]:
+# In[ ]:
 
 
 # taken from https://www.the-numbers.com but make no claims to verifying the numbers
 box_office = [np.nan, 5028948, 20515486, 327958, 14929552, 2215461]
 
 
-# In[8]:
+# In[ ]:
 
 
 df = pd.DataFrame({'Year': year,
@@ -76,25 +76,25 @@ df = pd.DataFrame({'Year': year,
 df
 
 
-# In[9]:
+# In[ ]:
 
 
 df.columns
 
 
-# In[10]:
+# In[ ]:
 
 
 df.index
 
 
-# In[11]:
+# In[ ]:
 
 
 df.dtypes
 
 
-# In[12]:
+# In[ ]:
 
 
 df['Budget']
@@ -102,13 +102,13 @@ df['Budget']
 
 # ## Basic info
 
-# In[13]:
+# In[ ]:
 
 
 df.shape
 
 
-# In[14]:
+# In[ ]:
 
 
 df.info()
@@ -116,49 +116,49 @@ df.info()
 
 # ## We will come back to nulls and Dtypes
 
-# In[15]:
+# In[ ]:
 
 
 df.describe()
 
 
-# In[16]:
+# In[ ]:
 
 
 df.T
 
 
-# In[17]:
+# In[ ]:
 
 
 df.head()
 
 
-# In[18]:
+# In[ ]:
 
 
 df.tail(3)
 
 
-# In[19]:
+# In[ ]:
 
 
 df.sort_index(axis=1, ascending=False)
 
 
-# In[20]:
+# In[ ]:
 
 
 df.sort_index(axis=0, ascending=False)
 
 
-# In[21]:
+# In[ ]:
 
 
 df.sort_values(by='Gross')
 
 
-# In[22]:
+# In[ ]:
 
 
 df.sort_values(by='Gross',ascending=False)
@@ -167,55 +167,55 @@ df.sort_values(by='Gross',ascending=False)
 # # Selecting
 # loc, iloc, at, iat
 
-# In[23]:
+# In[ ]:
 
 
 df['Titles']
 
 
-# In[24]:
+# In[ ]:
 
 
 df[0:3]
 
 
-# In[25]:
+# In[ ]:
 
 
 df.loc[1]
 
 
-# In[26]:
+# In[ ]:
 
 
 df.loc[1,['Titles','Year']]
 
 
-# In[27]:
+# In[ ]:
 
 
 df.loc[0:2,['Titles','Year']]
 
 
-# In[28]:
+# In[ ]:
 
 
 df.loc[1,'Titles']
 
 
-# In[29]:
+# In[ ]:
 
 
 df.at[1,'Titles']
 
 
-# In[30]:
+# In[ ]:
 
 
 df.iloc[1]
 
 
-# In[31]:
+# In[ ]:
 
 
 df.iloc[1,'Titles']

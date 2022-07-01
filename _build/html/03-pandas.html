@@ -123,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Start-Here.html">
-   Python Basics
+   Numerical Programming with Python, Part 1:  Python Basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -179,9 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04-image-teaser.html">
-   And now for something completely different
-   <a class="tocSkip">
-   </a>
+   Unknown
   </a>
  </li>
 </ul>
@@ -243,7 +241,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/03-pandas.ipynb"
+        <a href="https://mybinder.org/v2/gh/abigailmori/JB-numerical-python/main?urlpath=tree/03-pandas.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -304,7 +302,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/abigailmori/JB-numerical-python"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -321,7 +319,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F03-pandas.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/abigailmori/JB-numerical-python/issues/new?title=Issue%20on%20page%20%2F03-pandas.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -566,28 +564,10 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    And Now for Something Completely Different
-1               Monty Python and the Holy Grail
-2                  Monty Python&#39;s Life of Brian
-3       Monty Python Live at the Hollywood Bowl
-4            Monty Python&#39;s The Meaning of Life
-5                    Monty Python Live (Mostly)
-dtype: object
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titles</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    And Now for Something Completely Different
-1               Monty Python and the Holy Grail
-dtype: object
 </pre></div>
 </div>
 </div>
@@ -624,86 +604,10 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Titles</th>
-      <th>Budget</th>
-      <th>Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1971</td>
-      <td>And Now for Something Completely Different</td>
-      <td>100000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1975</td>
-      <td>Monty Python and the Holy Grail</td>
-      <td>400000</td>
-      <td>5028948.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1979</td>
-      <td>Monty Python's Life of Brian</td>
-      <td>4000000</td>
-      <td>20515486.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1982</td>
-      <td>Monty Python Live at the Hollywood Bowl</td>
-      <td>None</td>
-      <td>327958.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1983</td>
-      <td>Monty Python's The Meaning of Life</td>
-      <td>9000000</td>
-      <td>14929552.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2014</td>
-      <td>Monty Python Live (Mostly)</td>
-      <td>None</td>
-      <td>2215461.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Year&#39;, &#39;Titles&#39;, &#39;Budget&#39;, &#39;Gross&#39;], dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -714,11 +618,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RangeIndex(start=0, stop=6, step=1)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -726,30 +625,10 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year        int64
-Titles     object
-Budget     object
-Gross     float64
-dtype: object
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Budget&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     100000
-1     400000
-2    4000000
-3       None
-4    9000000
-5       None
-Name: Budget, dtype: object
 </pre></div>
 </div>
 </div>
@@ -762,30 +641,10 @@ Name: Budget, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6, 4)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 6 entries, 0 to 5
-Data columns (total 4 columns):
- #   Column  Non-Null Count  Dtype  
----  ------  --------------  -----  
- 0   Year    6 non-null      int64  
- 1   Titles  6 non-null      object 
- 2   Budget  4 non-null      object 
- 3   Gross   5 non-null      float64
-dtypes: float64(1), int64(1), object(2)
-memory usage: 320.0+ bytes
 </pre></div>
 </div>
 </div>
@@ -799,73 +658,6 @@ memory usage: 320.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>6.000000</td>
-      <td>5.000000e+00</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>1984.000000</td>
-      <td>8.603481e+06</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>15.362291</td>
-      <td>8.717560e+06</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>1971.000000</td>
-      <td>3.279580e+05</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>1976.000000</td>
-      <td>2.215461e+06</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>1980.500000</td>
-      <td>5.028948e+06</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>1982.750000</td>
-      <td>1.492955e+07</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>2014.000000</td>
-      <td>2.051549e+07</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -873,73 +665,6 @@ memory usage: 320.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Year</th>
-      <td>1971</td>
-      <td>1975</td>
-      <td>1979</td>
-      <td>1982</td>
-      <td>1983</td>
-      <td>2014</td>
-    </tr>
-    <tr>
-      <th>Titles</th>
-      <td>And Now for Something Completely Different</td>
-      <td>Monty Python and the Holy Grail</td>
-      <td>Monty Python's Life of Brian</td>
-      <td>Monty Python Live at the Hollywood Bowl</td>
-      <td>Monty Python's The Meaning of Life</td>
-      <td>Monty Python Live (Mostly)</td>
-    </tr>
-    <tr>
-      <th>Budget</th>
-      <td>100000</td>
-      <td>400000</td>
-      <td>4000000</td>
-      <td>None</td>
-      <td>9000000</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>Gross</th>
-      <td>NaN</td>
-      <td>5028948.0</td>
-      <td>20515486.0</td>
-      <td>327958.0</td>
-      <td>14929552.0</td>
-      <td>2215461.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -947,70 +672,6 @@ memory usage: 320.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Titles</th>
-      <th>Budget</th>
-      <th>Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1971</td>
-      <td>And Now for Something Completely Different</td>
-      <td>100000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1975</td>
-      <td>Monty Python and the Holy Grail</td>
-      <td>400000</td>
-      <td>5028948.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1979</td>
-      <td>Monty Python's Life of Brian</td>
-      <td>4000000</td>
-      <td>20515486.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1982</td>
-      <td>Monty Python Live at the Hollywood Bowl</td>
-      <td>None</td>
-      <td>327958.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1983</td>
-      <td>Monty Python's The Meaning of Life</td>
-      <td>9000000</td>
-      <td>14929552.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1018,56 +679,6 @@ memory usage: 320.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Titles</th>
-      <th>Budget</th>
-      <th>Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>3</th>
-      <td>1982</td>
-      <td>Monty Python Live at the Hollywood Bowl</td>
-      <td>None</td>
-      <td>327958.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1983</td>
-      <td>Monty Python's The Meaning of Life</td>
-      <td>9000000</td>
-      <td>14929552.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2014</td>
-      <td>Monty Python Live (Mostly)</td>
-      <td>None</td>
-      <td>2215461.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1075,77 +686,6 @@ memory usage: 320.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Titles</th>
-      <th>Gross</th>
-      <th>Budget</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1971</td>
-      <td>And Now for Something Completely Different</td>
-      <td>NaN</td>
-      <td>100000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1975</td>
-      <td>Monty Python and the Holy Grail</td>
-      <td>5028948.0</td>
-      <td>400000</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1979</td>
-      <td>Monty Python's Life of Brian</td>
-      <td>20515486.0</td>
-      <td>4000000</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1982</td>
-      <td>Monty Python Live at the Hollywood Bowl</td>
-      <td>327958.0</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1983</td>
-      <td>Monty Python's The Meaning of Life</td>
-      <td>14929552.0</td>
-      <td>9000000</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2014</td>
-      <td>Monty Python Live (Mostly)</td>
-      <td>2215461.0</td>
-      <td>None</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1153,77 +693,6 @@ memory usage: 320.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Titles</th>
-      <th>Budget</th>
-      <th>Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>5</th>
-      <td>2014</td>
-      <td>Monty Python Live (Mostly)</td>
-      <td>None</td>
-      <td>2215461.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1983</td>
-      <td>Monty Python's The Meaning of Life</td>
-      <td>9000000</td>
-      <td>14929552.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1982</td>
-      <td>Monty Python Live at the Hollywood Bowl</td>
-      <td>None</td>
-      <td>327958.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1979</td>
-      <td>Monty Python's Life of Brian</td>
-      <td>4000000</td>
-      <td>20515486.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1975</td>
-      <td>Monty Python and the Holy Grail</td>
-      <td>400000</td>
-      <td>5028948.0</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>1971</td>
-      <td>And Now for Something Completely Different</td>
-      <td>100000</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1231,77 +700,6 @@ memory usage: 320.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Titles</th>
-      <th>Budget</th>
-      <th>Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>3</th>
-      <td>1982</td>
-      <td>Monty Python Live at the Hollywood Bowl</td>
-      <td>None</td>
-      <td>327958.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2014</td>
-      <td>Monty Python Live (Mostly)</td>
-      <td>None</td>
-      <td>2215461.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1975</td>
-      <td>Monty Python and the Holy Grail</td>
-      <td>400000</td>
-      <td>5028948.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1983</td>
-      <td>Monty Python's The Meaning of Life</td>
-      <td>9000000</td>
-      <td>14929552.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1979</td>
-      <td>Monty Python's Life of Brian</td>
-      <td>4000000</td>
-      <td>20515486.0</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>1971</td>
-      <td>And Now for Something Completely Different</td>
-      <td>100000</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1309,77 +707,6 @@ memory usage: 320.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Titles</th>
-      <th>Budget</th>
-      <th>Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2</th>
-      <td>1979</td>
-      <td>Monty Python's Life of Brian</td>
-      <td>4000000</td>
-      <td>20515486.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1983</td>
-      <td>Monty Python's The Meaning of Life</td>
-      <td>9000000</td>
-      <td>14929552.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1975</td>
-      <td>Monty Python and the Holy Grail</td>
-      <td>400000</td>
-      <td>5028948.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2014</td>
-      <td>Monty Python Live (Mostly)</td>
-      <td>None</td>
-      <td>2215461.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1982</td>
-      <td>Monty Python Live at the Hollywood Bowl</td>
-      <td>None</td>
-      <td>327958.0</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>1971</td>
-      <td>And Now for Something Completely Different</td>
-      <td>100000</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="selecting">
@@ -1391,17 +718,6 @@ memory usage: 320.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    And Now for Something Completely Different
-1               Monty Python and the Holy Grail
-2                  Monty Python&#39;s Life of Brian
-3       Monty Python Live at the Hollywood Bowl
-4            Monty Python&#39;s The Meaning of Life
-5                    Monty Python Live (Mostly)
-Name: Titles, dtype: object
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1409,69 +725,10 @@ Name: Titles, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Titles</th>
-      <th>Budget</th>
-      <th>Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1971</td>
-      <td>And Now for Something Completely Different</td>
-      <td>100000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1975</td>
-      <td>Monty Python and the Holy Grail</td>
-      <td>400000</td>
-      <td>5028948.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1979</td>
-      <td>Monty Python's Life of Brian</td>
-      <td>4000000</td>
-      <td>20515486.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year                                 1975
-Titles    Monty Python and the Holy Grail
-Budget                             400000
-Gross                           5028948.0
-Name: 1, dtype: object
 </pre></div>
 </div>
 </div>
@@ -1482,13 +739,6 @@ Name: 1, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Titles    Monty Python and the Holy Grail
-Year                                 1975
-Name: 1, dtype: object
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1496,57 +746,10 @@ Name: 1, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Titles</th>
-      <th>Year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>And Now for Something Completely Different</td>
-      <td>1971</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Monty Python and the Holy Grail</td>
-      <td>1975</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Monty Python's Life of Brian</td>
-      <td>1979</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Titles&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Monty Python and the Holy Grail&#39;
 </pre></div>
 </div>
 </div>
@@ -1557,11 +760,6 @@ Name: 1, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Monty Python and the Holy Grail&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1569,66 +767,10 @@ Name: 1, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year                                 1975
-Titles    Monty Python and the Holy Grail
-Budget                             400000
-Gross                           5028948.0
-Name: 1, dtype: object
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Titles&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">File /opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexing.py:769,</span> in <span class="ni">_LocationIndexer._validate_tuple_indexer</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">768</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">769</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_validate_key</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">770</span> <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-
-<span class="nn">File /opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexing.py:1378,</span> in <span class="ni">_iLocIndexer._validate_key</span><span class="nt">(self, key, axis)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1377</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1378</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Can only index by location with a [</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_valid_types</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">Input In [31],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Titles&#39;</span><span class="p">]</span>
-
-<span class="nn">File /opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexing.py:961,</span> in <span class="ni">_LocationIndexer.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_scalar_access</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">960</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">_get_value</span><span class="p">(</span><span class="o">*</span><span class="n">key</span><span class="p">,</span> <span class="n">takeable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_takeable</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">961</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_tuple</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">962</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">963</span>     <span class="c1"># we by definition only have the 0th axis</span>
-<span class="g g-Whitespace">    </span><span class="mi">964</span>     <span class="n">axis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="ow">or</span> <span class="mi">0</span>
-
-<span class="nn">File /opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexing.py:1458,</span> in <span class="ni">_iLocIndexer._getitem_tuple</span><span class="nt">(self, tup)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1456</span> <span class="k">def</span> <span class="nf">_getitem_tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tup</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1458</span>     <span class="n">tup</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_tuple_indexer</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1459</span>     <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="n">IndexingError</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1460</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_lowerdim</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>
-
-<span class="nn">File /opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexing.py:771,</span> in <span class="ni">_LocationIndexer._validate_tuple_indexer</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">769</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_validate_key</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">770</span>     <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">771</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">772</span>             <span class="s2">&quot;Location based indexing can only have &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">773</span>             <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_valid_types</span><span class="si">}</span><span class="s2">] types&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">774</span>         <span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
-<span class="g g-Whitespace">    </span><span class="mi">775</span> <span class="k">return</span> <span class="n">key</span>
-
-<span class="ne">ValueError</span>: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
 </pre></div>
 </div>
 </div>
@@ -2119,8 +1261,8 @@ Name: 1, dtype: object
     {
         requestKernel: true,
         binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
+            repo: "abigailmori/JB-numerical-python",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",

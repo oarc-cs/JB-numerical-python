@@ -42,7 +42,7 @@
 # 
 # $$\text{Balance}(y) = p(1 + r)^y + c\left[\frac{(1 + r)^{y+1} - (1 + r)}{r} \right]$$
 
-# In[1]:
+# In[ ]:
 
 
 y1 = 1
@@ -52,7 +52,7 @@ c1 = 100
 p1*(1 + r1)**y1 + c1*( ((1 + r1)**(y1 + 1) - (1 + r1)) / r1 )
 
 
-# In[2]:
+# In[ ]:
 
 
 y2 = 45
@@ -64,19 +64,19 @@ p2*(1 + r2)**y2 + c2*( ((1 + r2)**(y2 + 1) - (1 + r2)) / r2 )
 
 # ## Strings
 
-# In[3]:
+# In[ ]:
 
 
 parrotreturn = "This parrot is no more! It has ceased to be!"
 
 
-# In[4]:
+# In[ ]:
 
 
 parrotreturn[1]
 
 
-# In[5]:
+# In[ ]:
 
 
 parrotreturn[0]
@@ -84,13 +84,13 @@ parrotreturn[0]
 
 # Do note:  Python numbering starts at 0, not 1
 
-# In[6]:
+# In[ ]:
 
 
 parrotreturn[0:3]
 
 
-# In[7]:
+# In[ ]:
 
 
 parrotreturn[0:4]
@@ -98,7 +98,7 @@ parrotreturn[0:4]
 
 # Slicing includes the first number but not the last
 
-# In[8]:
+# In[ ]:
 
 
 parrotreturn.index('!')
@@ -106,49 +106,49 @@ parrotreturn.index('!')
 
 # What exactly is ".index"? -- index is a *method* and the "." notifies Python to call the method associated with parrotreturn.
 
-# In[9]:
+# In[ ]:
 
 
 # Use parrotreturn.index('!') and slicing to print out only the first sentence of the string
 
 
-# In[10]:
+# In[ ]:
 
 
 print(parrotreturn)
 
 
-# In[11]:
+# In[ ]:
 
 
 parrotreturn = '"This parrot is no more! It has ceased to be!"'
 
 
-# In[12]:
+# In[ ]:
 
 
 print(parrotreturn)
 
 
-# In[13]:
+# In[ ]:
 
 
 parrotreturn = "\"This parrot is no more! It has ceased to be!\""
 
 
-# In[14]:
+# In[ ]:
 
 
 print(parrotreturn)
 
 
-# In[15]:
+# In[ ]:
 
 
 parrotreturn = "\"This parrot is no more!\"\n\"It has ceased to be!\""
 
 
-# In[16]:
+# In[ ]:
 
 
 print(parrotreturn)
@@ -156,49 +156,49 @@ print(parrotreturn)
 
 # Strings can also be concatenated and expanded with math operators
 
-# In[17]:
+# In[ ]:
 
 
 "spam"
 
 
-# In[18]:
+# In[ ]:
 
 
 "spam"*3
 
 
-# In[19]:
+# In[ ]:
 
 
 'spam'*3 + ' and ham and eggs'
 
 
-# In[20]:
+# In[ ]:
 
 
 return3 = "It's expired and gone to meet its maker!"
 
 
-# In[21]:
+# In[ ]:
 
 
 parrotreturn + return3
 
 
-# In[22]:
+# In[ ]:
 
 
 print(parrotreturn + return3)
 
 
-# In[23]:
+# In[ ]:
 
 
 # clean up the quote so that the formatting is consistent
 
 
-# In[24]:
+# In[ ]:
 
 
 # put the entire string into one variable
@@ -207,25 +207,25 @@ print(parrotreturn + return3)
 
 # ## Lists
 
-# In[25]:
+# In[ ]:
 
 
 holyhandgrenade = [1, 2, 5]
 
 
-# In[26]:
+# In[ ]:
 
 
 holyhandgrenade[1]
 
 
-# In[27]:
+# In[ ]:
 
 
 holyhandgrenade[0]
 
 
-# In[28]:
+# In[ ]:
 
 
 holyhandgrenade[3]
@@ -676,9 +676,9 @@ while disneytrip < 10:
     disneytrip += 1
 
 
-# ### For loops
+# # For loops
 
-# In[ ]:
+# In[1]:
 
 
 for disneytrip in range(10):

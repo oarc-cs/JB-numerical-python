@@ -7,7 +7,7 @@
 # 
 # -- [yahoo_fin documentation](http://theautomatic.net/yahoo_fin-documentation/)
 
-# In[1]:
+# In[ ]:
 
 
 import yahoo_fin.stock_info as si

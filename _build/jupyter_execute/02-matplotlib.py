@@ -21,7 +21,7 @@
 # ![image.png](attachment:image.png)
 # Anatomy of a Figure, https://matplotlib.org/3.1.1/gallery/showcase/anatomy.html
 
-# In[1]:
+# In[ ]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -30,14 +30,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-# In[2]:
+# In[ ]:
 
 
 plt.plot([1,2,3,4])
 plt.show()
 
 
-# In[3]:
+# In[ ]:
 
 
 plt.plot([1,2,3,4])
@@ -45,7 +45,7 @@ plt.ylabel('some numbers')
 plt.show()
 
 
-# In[4]:
+# In[ ]:
 
 
 fig, ax = plt.subplots()
@@ -55,7 +55,7 @@ ax.set(xlabel = 'list index', ylabel='values',title='First Plot')
 plt.show()
 
 
-# In[5]:
+# In[ ]:
 
 
 fig = plt.figure()
@@ -66,7 +66,7 @@ ax.set(xlabel = 'list index', ylabel='values',title='First Plot')
 plt.show()
 
 
-# In[6]:
+# In[ ]:
 
 
 fig, ax = plt.subplots(1,2,figsize=(10,5))
@@ -78,14 +78,14 @@ ax[1].set(xlabel = 'list index', ylabel='squared values',title='First Plot')
 plt.show()
 
 
-# In[7]:
+# In[ ]:
 
 
 plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
 plt.show()
 
 
-# In[8]:
+# In[ ]:
 
 
 plt.plot([1,2,3,4], [1,4,9,16], 'ro')
@@ -93,7 +93,7 @@ plt.axis([0, 6, 0, 20])
 plt.show()
 
 
-# In[9]:
+# In[ ]:
 
 
 # evenly sampled time at 200ms intervals
@@ -104,7 +104,7 @@ plt.plot(t, t, 'r--', t, t**2, 'bs', t, t**3, 'g^')
 plt.show()
 
 
-# In[10]:
+# In[ ]:
 
 
 def f(t):
@@ -123,7 +123,7 @@ plt.plot(t2, np.cos(2*np.pi*t2), 'r--')
 plt.show()
 
 
-# In[11]:
+# In[ ]:
 
 
 # Fixing random state for reproducibility
@@ -144,7 +144,7 @@ plt.grid(True)
 plt.show()
 
 
-# In[12]:
+# In[ ]:
 
 
 # Fixing random state for reproducibility
@@ -183,7 +183,7 @@ axs[1].text(100, 0.027, r'$\mu=100,\ \sigma=15$')
 plt.show()
 
 
-# In[13]:
+# In[ ]:
 
 
 import numpy as np
@@ -200,7 +200,7 @@ axs[1, 1].hist2d(data[0], data[1])
 plt.show()
 
 
-# In[14]:
+# In[ ]:
 
 
 # This import registers the 3D projection, but is otherwise unused.
@@ -222,7 +222,7 @@ surf = ax.plot_surface(X, Y, Z)
 plt.show()
 
 
-# In[15]:
+# In[ ]:
 
 
 # This import registers the 3D projection, but is otherwise unused.
@@ -251,7 +251,7 @@ fig.colorbar(surf, shrink=0.5, aspect=10)
 plt.show()
 
 
-# In[16]:
+# In[ ]:
 
 
 # This import registers the 3D projection, but is otherwise unused.
