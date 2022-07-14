@@ -3,7 +3,7 @@
 
 # # Matplotlib
 
-# ![image.png](attachment:image.png)
+# <img src="./images/matplotlib_image.webp" width=600>
 # Anatomy of a Figure, https://matplotlib.org/3.1.1/gallery/showcase/anatomy.html
 
 # ## Graphing

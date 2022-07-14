@@ -248,19 +248,7 @@ expr_func(xvalues)
 # In[39]:
 
 
-lt.plot(xvalues,expr_func(xvalues));
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
+plt.plot(xvalues,expr_func(xvalues));
 
 
 # In[ ]:

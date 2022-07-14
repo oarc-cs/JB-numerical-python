@@ -50,12 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Pandas" href="03-pandas.html" />
-    <link rel="prev" title="Ex. Solving an ODE with Numerical Modeling" href="ODE-numericalmodeling2.html" />
+    <link rel="prev" title="Example: Grabbing Time Series Data from a Public API (here Yahoo finance)" href="stock-report.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -139,6 +137,23 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Data Visualization
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-pandas.html">
+   Pandas
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Symbolic Math
  </span>
 </p>
@@ -173,23 +188,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="ODE-numericalmodeling2.html">
    Ex. Solving ODEs with Numerical Modeling
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Data Visualization
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-pandas.html">
-   Pandas
   </a>
  </li>
 </ul>
@@ -457,9 +455,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="matplotlib">
 <h1>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h1>
-<p><img alt="image.png" src="attachment:image.png" />
-Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/3.1.1/gallery/showcase/anatomy.html">https://matplotlib.org/3.1.1/gallery/showcase/anatomy.html</a></p>
-<section id="graphing">
+<img src="./images/matplotlib_image.webp" width=600>
+Anatomy of a Figure, https://matplotlib.org/3.1.1/gallery/showcase/anatomy.html<section id="graphing">
 <h2>Graphing<a class="headerlink" href="#graphing" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -712,7 +709,7 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qk/hv87dc8s27d5rgnhn23fklgh0000gn/T/ipykernel_30168/1297678667.py:5: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qk/hv87dc8s27d5rgnhn23fklgh0000gn/T/ipykernel_30802/1297678667.py:5: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
   ax = fig.gca(projection=&#39;3d&#39;)
 </pre></div>
 </div>
@@ -749,7 +746,7 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qk/hv87dc8s27d5rgnhn23fklgh0000gn/T/ipykernel_30168/547207051.py:6: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qk/hv87dc8s27d5rgnhn23fklgh0000gn/T/ipykernel_30802/547207051.py:6: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
   ax = fig.gca(projection=&#39;3d&#39;)
 </pre></div>
 </div>
@@ -794,7 +791,7 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qk/hv87dc8s27d5rgnhn23fklgh0000gn/T/ipykernel_30168/3555600703.py:11: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qk/hv87dc8s27d5rgnhn23fklgh0000gn/T/ipykernel_30802/3555600703.py:11: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
   ax = fig.gca(projection=&#39;3d&#39;)
 </pre></div>
 </div>
@@ -831,11 +828,11 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="ODE-numericalmodeling2.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="stock-report.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Ex. Solving an ODE with Numerical Modeling</p>
+            <p class="prev-next-title">Example:  Grabbing Time Series Data from a Public API (here Yahoo finance)</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="03-pandas.html" title="next page">

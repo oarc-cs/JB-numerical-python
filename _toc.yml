@@ -13,6 +13,12 @@ parts:
     title: Intro to Python Libraries
   - file: stock-report
     title: Ex. Grabbing Time Series Data From a Public API
+- caption: Data Visualization
+  chapters:
+  - file: 02-matplotlib
+    title: Matplotlib
+  - file: 03-pandas
+    title: Pandas
 - caption: Symbolic Math
   chapters:
   - file: 01-symbolic-math
@@ -27,9 +33,4 @@ parts:
     title: Fitting and Interpolating
   - file: ODE-numericalmodeling2
     title: Ex. Solving ODEs with Numerical Modeling
-- caption: Data Visualization
-  chapters:
-  - file: 02-matplotlib
-    title: Matplotlib
-  - file: 03-pandas
-    title: Pandas
+
