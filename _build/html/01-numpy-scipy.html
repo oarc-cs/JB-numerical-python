@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Numerical Programming with Python, Part 2: &#8212; Numerical Programming with Python Part 1, 2 &amp; 3</title>
+    <title>NumPy and SciPy &#8212; Numerical Programming with Python</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Matplotlib" href="02-matplotlib.html" />
-    <link rel="prev" title="Example: grabbing time series data from a public API (here Yahoo finance)" href="stock-report.html" />
+    <link rel="next" title="Fitting and Interpolating" href="02-fitting-and-interpolating.html" />
+    <link rel="prev" title="Ex. Solving an ODE with Symbolic Math" href="ODE-symbolicmath.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -99,7 +101,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Numerical Programming with Python Part 1, 2 & 3</h1>
+      <h1 class="site-logo" id="site-title">Numerical Programming with Python</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -111,19 +113,24 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    Winter 2021 IDRE Numerical Programming with Python
+                    Numerical Programming with Python
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Part 1
+  Fundamentals of Python
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Start-Here.html">
-   Numerical Programming with Python, Part 1:  Python Basics
+  <a class="reference internal" href="01-Python-Fundamentals.html">
+   Python Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python-Libraries.html">
+   Intro to Python Libraries
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,17 +141,49 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Part 2
+  Symbolic Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-symbolic-math.html">
+   Symbolic Math with SymPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ODE-symbolicmath.html">
+   Ex. Solving ODEs with Symbolic Math
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Numerical Modeling
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Numerical Programming with Python, Part 2:
-   <a class="tocSkip">
-   </a>
+   Numpy and SciPy
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-fitting-and-interpolating.html">
+   Fitting and Interpolating
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ODE-numericalmodeling2.html">
+   Ex. Solving ODEs with Numerical Modeling
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Visualization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02-matplotlib.html">
    Matplotlib
@@ -152,34 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03-pandas.html">
-   Basic info
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Part 3
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01-symbolic-math.html">
-   Numerical Modeling
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-fitting-and-interpolating.html">
-   Our familiar example from previous weeks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-ODEs.html">
-   Harmonic oscillator
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-image-teaser.html">
-   Unknown
+   Pandas
   </a>
  </li>
 </ul>
@@ -406,87 +418,46 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Numerical Programming with Python, Part 2:
-   <a class="tocSkip">
-   </a>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-numpy-to-look-at-series-of-data">
+   Using NumPy to Look at Series of Data
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#intro-to-numpy-scipy-and-pandas-and-matplotlib-a-class-tocskip">
-   Intro to NumPy, SciPy, and Pandas (and Matplotlib)
-   <a class="tocSkip">
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#brief-review-from-the-end-of-last-week">
-   Brief review from the end of last week
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions">
-     Functions
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#we-re-going-to-use-a-bit-of-ipython-magics-to-look-at-timings-this-won-t-work-in-scripts-but-works-well-here-in-the-jupyter-notebook">
+     We’re going to use a bit of ipython “magics” to look at timings…. this won’t work in scripts, but works well here in the Jupyter notebook
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modules">
-     Modules
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-these-to-look-at-series-of-data">
-     Using these to look at series of data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-numpy-to-look-at-series-of-data">
-     Using NumPy to look at series of data
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-operations-with-n-dimensional-arrays">
+     Basic Operations with N-dimensional Arrays
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#we-re-going-to-use-a-bit-of-ipython-magics-to-look-at-timings-this-won-t-work-in-scripts-but-works-well-here-in-the-jupyter-notebook">
-       We’re going to use a bit of ipython “magics” to look at timings…. this won’t work in scripts, but works well here in the Jupyter notebook
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#indexing-and-slicing">
+       Indexing and Slicing
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creating-some-arrays">
+       Creating Some Arrays
       </a>
      </li>
     </ul>
    </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-operations-with-n-dimensional-arrays">
-   basic operations with n-dimensional arrays
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indexing-and-slicing">
-   Indexing and slicing
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-some-arrays">
-   creating some arrays
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#broadcasting">
-   Broadcasting
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operations-along-axes">
-   operations along axes
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numpy-submodules">
-   numpy submodules
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#final-numpy-fun-estimating-pi">
-     Final numpy fun - estimating
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#broadcasting">
+     Broadcasting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operations-along-axes">
+     Operations Along Axes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-estimating-pi">
+     Example: Estimating
      <span class="math notranslate nohighlight">
       \(\pi\)
      </span>
@@ -494,14 +465,19 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#scipy">
    SciPy
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpolation">
+     Interpolation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#images">
-     images
+     Images
     </a>
    </li>
   </ul>
@@ -515,7 +491,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Numerical Programming with Python, Part 2:   <a class="tocSkip"></h1>
+                <h1>NumPy and SciPy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -525,87 +501,46 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Numerical Programming with Python, Part 2:
-   <a class="tocSkip">
-   </a>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-numpy-to-look-at-series-of-data">
+   Using NumPy to Look at Series of Data
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#intro-to-numpy-scipy-and-pandas-and-matplotlib-a-class-tocskip">
-   Intro to NumPy, SciPy, and Pandas (and Matplotlib)
-   <a class="tocSkip">
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#brief-review-from-the-end-of-last-week">
-   Brief review from the end of last week
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions">
-     Functions
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#we-re-going-to-use-a-bit-of-ipython-magics-to-look-at-timings-this-won-t-work-in-scripts-but-works-well-here-in-the-jupyter-notebook">
+     We’re going to use a bit of ipython “magics” to look at timings…. this won’t work in scripts, but works well here in the Jupyter notebook
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modules">
-     Modules
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-these-to-look-at-series-of-data">
-     Using these to look at series of data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-numpy-to-look-at-series-of-data">
-     Using NumPy to look at series of data
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-operations-with-n-dimensional-arrays">
+     Basic Operations with N-dimensional Arrays
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#we-re-going-to-use-a-bit-of-ipython-magics-to-look-at-timings-this-won-t-work-in-scripts-but-works-well-here-in-the-jupyter-notebook">
-       We’re going to use a bit of ipython “magics” to look at timings…. this won’t work in scripts, but works well here in the Jupyter notebook
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#indexing-and-slicing">
+       Indexing and Slicing
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creating-some-arrays">
+       Creating Some Arrays
       </a>
      </li>
     </ul>
    </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-operations-with-n-dimensional-arrays">
-   basic operations with n-dimensional arrays
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indexing-and-slicing">
-   Indexing and slicing
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-some-arrays">
-   creating some arrays
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#broadcasting">
-   Broadcasting
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operations-along-axes">
-   operations along axes
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numpy-submodules">
-   numpy submodules
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#final-numpy-fun-estimating-pi">
-     Final numpy fun - estimating
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#broadcasting">
+     Broadcasting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operations-along-axes">
+     Operations Along Axes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-estimating-pi">
+     Example: Estimating
      <span class="math notranslate nohighlight">
       \(\pi\)
      </span>
@@ -613,14 +548,19 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#scipy">
    SciPy
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpolation">
+     Interpolation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#images">
-     images
+     Images
     </a>
    </li>
   </ul>
@@ -635,29 +575,39 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="numerical-programming-with-python-part-2-a-class-tocskip">
-<h1>Numerical Programming with Python, Part 2:   <a class="tocSkip"><a class="headerlink" href="#numerical-programming-with-python-part-2-a-class-tocskip" title="Permalink to this headline">#</a></h1>
-</section>
-<section id="intro-to-numpy-scipy-and-pandas-and-matplotlib-a-class-tocskip">
-<h1>Intro to NumPy, SciPy, and Pandas (and Matplotlib)  <a class="tocSkip"><a class="headerlink" href="#intro-to-numpy-scipy-and-pandas-and-matplotlib-a-class-tocskip" title="Permalink to this headline">#</a></h1>
-<p><img alt="image.png" src="attachment:image.png" /></p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="brief-review-from-the-end-of-last-week">
-<h1>Brief review from the end of last week<a class="headerlink" href="#brief-review-from-the-end-of-last-week" title="Permalink to this headline">#</a></h1>
-<section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
-<p>Simple example: compound interest calculator with annual contributions</p>
-<ul class="simple">
-<li><p>p = principal</p></li>
-<li><p>r = annual interest rate in percent</p></li>
-<li><p>y = year of the balance</p></li>
-<li><p>c = annual contribution (made at the start of the year)</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\text{Balance}(y) = p(1 + r)^y + c\left[\frac{(1 + r)^{y+1} - (1 + r)}{r} \right]\]</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="numpy-and-scipy">
+<h1>NumPy and SciPy<a class="headerlink" href="#numpy-and-scipy" title="Permalink to this headline">#</a></h1>
+<section id="using-numpy-to-look-at-series-of-data">
+<h2>Using NumPy to Look at Series of Data<a class="headerlink" href="#using-numpy-to-look-at-series-of-data" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">investment_balance</span><span class="p">(</span><span class="n">principal</span><span class="p">,</span><span class="n">rate</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">contribution</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set these as constants</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">benpy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load benpy.py</span>
+<span class="k">def</span> <span class="nf">compound_calculator</span><span class="p">(</span><span class="n">principal</span><span class="p">,</span><span class="n">rate</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">contribution</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    compound_calculator(p,r,y,c) calculates the value at year y of an investment</span>
+<span class="sd">    p = principal</span>
+<span class="sd">    r = interest rate (percent value)</span>
+<span class="sd">    y = year</span>
+<span class="sd">    c = contribution at end of each year</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
     <span class="n">p</span> <span class="o">=</span> <span class="n">principal</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">rate</span><span class="o">/</span><span class="mi">100</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">year</span>
@@ -670,48 +620,12 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">investment_balance</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">principal</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">contribution</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="modules">
-<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">benpy</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">benpy</span><span class="o">.</span><span class="n">compound_calculator</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">principal</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">contribution</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="using-these-to-look-at-series-of-data">
-<h2>Using these to look at series of data<a class="headerlink" href="#using-these-to-look-at-series-of-data" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set these as constants</span>
-<span class="n">p</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">100</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rates</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Calculate the balance for each of the given rates</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">balance</span> <span class="o">=</span> <span class="p">[]</span>
@@ -722,61 +636,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1111.0, 1121.9999999999998, 1132.9999999999998, 1144.0000000000002, 1155.0, 1166.0000000000002, 1177.0, 1188.0, 1199.0, 1210.0]
+</pre></div>
+</div>
+</div>
 </div>
 <p>This is what we might like to do:
-<code class="docutils literal notranslate"><span class="pre">balance</span> <span class="pre">=</span> <span class="pre">benpy.compound_calculator(p,rates,y,c)</span></code></p>
-<p>Numpy can help.</p>
-<p><img alt="image.png" src="attachment:image.png" /></p>
-<p><a class="reference external" href="https://numpy.org/">https://numpy.org/</a></p>
-<p><img alt="image.png" src="attachment:image.png" /></p>
-<p><a class="reference external" href="https://www.scipy.org/">https://www.scipy.org/</a></p>
-<p><img alt="image.png" src="attachment:image.png" /></p>
-<p><a class="reference external" href="https://matplotlib.org/">https://matplotlib.org/</a></p>
-<p>The “SciPy ecosystem” of scientific computing in Python builds upon a small core of packages:
-<a class="reference external" href="https://www.scipy.org/about.html">https://www.scipy.org/about.html</a></p>
+`balance = benpy.compound_calculator(p,rates,y,c)</p>
 <ul class="simple">
-<li><p><strong>Python</strong>, a general purpose programming language. It is interpreted and dynamically typed and is very well suited for interactive work and quick prototyping, while being powerful enough to write large applications in.</p></li>
-<li><p><strong>NumPy</strong>, the fundamental package for numerical computation. It defines the numerical array and matrix types and basic operations on them.</p></li>
-<li><p>The <strong>SciPy library</strong>, a collection of numerical algorithms and domain-specific toolboxes, including signal processing, optimization, statistics, and much more.</p></li>
-<li><p><strong>Matplotlib</strong>, a mature and popular plotting package that provides publication-quality 2-D plotting, as well as rudimentary 3-D plotting.</p></li>
+<li><p>Has the list of rates directly in the function call</p></li>
 </ul>
-<p><img alt="image.png" src="attachment:image.png" /></p>
-<p><a class="reference external" href="https://pandas.pydata.org/">https://pandas.pydata.org/</a></p>
-<p>Data manipulation in Python can be greatly facilitated with the Pandas library, and it may be one of the most widely used tools for data science.</p>
-<p>Pandas data-manipulation capabilities are built on top of NumPy, utilizing its fast array processing, and its graphing capabilities are built on top of Matplotlib.</p>
-</section>
-<section id="using-numpy-to-look-at-series-of-data">
-<h2>Using NumPy to look at series of data<a class="headerlink" href="#using-numpy-to-look-at-series-of-data" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set these as constants</span>
-<span class="n">p</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">100</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rates</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">balance</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">rates</span><span class="p">:</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="n">balance</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">benpy</span><span class="o">.</span><span class="n">compound_calculator</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">balance</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This is what we might like to do:
-<code class="docutils literal notranslate"><span class="pre">balance</span> <span class="pre">=</span> <span class="pre">benpy.compound_calculator(p,rates,y,c)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -797,6 +667,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -811,9 +686,18 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1111., 1122., 1133., 1144., 1155., 1166., 1177., 1188., 1199.,
+       1210.])
+</pre></div>
+</div>
+</div>
 </div>
 <section id="we-re-going-to-use-a-bit-of-ipython-magics-to-look-at-timings-this-won-t-work-in-scripts-but-works-well-here-in-the-jupyter-notebook">
 <h3>We’re going to use a bit of ipython “magics” to look at timings…. this won’t work in scripts, but works well here in the Jupyter notebook<a class="headerlink" href="#we-re-going-to-use-a-bit-of-ipython-magics-to-look-at-timings-this-won-t-work-in-scripts-but-works-well-here-in-the-jupyter-notebook" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
@@ -824,11 +708,21 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.63 µs ± 32.4 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
 <span class="n">balancenp</span> <span class="o">=</span> <span class="n">benpy</span><span class="o">.</span><span class="n">compound_calculator</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">ratesnp</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.37 µs ± 539 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -846,6 +740,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -854,6 +753,11 @@ title="Print to PDF"
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10000</span><span class="p">):</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">i</span>
     <span class="n">balance</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">benpy</span><span class="o">.</span><span class="n">compound_calculator</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.57 ms ± 26.3 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -866,15 +770,23 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>69.7 µs ± 356 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="basic-operations-with-n-dimensional-arrays">
-<h1>basic operations with n-dimensional arrays<a class="headerlink" href="#basic-operations-with-n-dimensional-arrays" title="Permalink to this headline">#</a></h1>
+<section id="basic-operations-with-n-dimensional-arrays">
+<h3>Basic Operations with N-dimensional Arrays<a class="headerlink" href="#basic-operations-with-n-dimensional-arrays" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratesnp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10])
 </pre></div>
 </div>
 </div>
@@ -893,10 +805,22 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2],
+       [3, 4]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-4, -3],
+       [-2, -1]])
 </pre></div>
 </div>
 </div>
@@ -907,10 +831,22 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-3, -1],
+       [ 1,  3]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">-</span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5, 5],
+       [5, 5]])
 </pre></div>
 </div>
 </div>
@@ -921,6 +857,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.25      , -0.66666667],
+       [-1.5       , -4.        ]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -928,10 +870,22 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-4, -6],
+       [-6, -4]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="c1"># matrix multiplication</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ -8,  -5],
+       [-20, -13]])
 </pre></div>
 </div>
 </div>
@@ -946,6 +900,14 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+(2, 2)
+4
+int64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -953,13 +915,23 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 3],
+       [2, 4]])
+</pre></div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="indexing-and-slicing">
-<h1>Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline">#</a></h1>
+</div>
+</div>
+<section id="indexing-and-slicing">
+<h4>Indexing and Slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2])
 </pre></div>
 </div>
 </div>
@@ -970,10 +942,21 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2],
+       [3, 4]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 4]])
 </pre></div>
 </div>
 </div>
@@ -984,10 +967,21 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([], shape=(0, 2), dtype=int64)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2],
+       [3, 4]])
 </pre></div>
 </div>
 </div>
@@ -998,10 +992,20 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 3])
 </pre></div>
 </div>
 </div>
@@ -1012,6 +1016,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 4])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1019,10 +1028,21 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[False, False],
+       [ True,  True]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">]</span> <span class="c1">#returns all elements that are greater than 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 4])
 </pre></div>
 </div>
 </div>
@@ -1033,13 +1053,23 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 4])
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="creating-some-arrays">
-<h1>creating some arrays<a class="headerlink" href="#creating-some-arrays" title="Permalink to this headline">#</a></h1>
+<section id="creating-some-arrays">
+<h4>Creating Some Arrays<a class="headerlink" href="#creating-some-arrays" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 </pre></div>
 </div>
 </div>
@@ -1050,10 +1080,23 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1. ,  1.5,  2. ,  2.5,  3. ,  3.5,  4. ,  4.5,  5. ,  5.5,  6. ,
+        6.5,  7. ,  7.5,  8. ,  8.5,  9. ,  9.5, 10. , 10.5])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.00000000e+00, -8.00000000e-01, -6.00000000e-01, -4.00000000e-01,
+       -2.00000000e-01, -2.22044605e-16,  2.00000000e-01,  4.00000000e-01,
+        6.00000000e-01,  8.00000000e-01])
 </pre></div>
 </div>
 </div>
@@ -1064,10 +1107,39 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1. , -0.8, -0.6, -0.4, -0.2,  0. ,  0.2,  0.4,  0.6,  0.8,  1. ])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.06346652, 0.12693304, 0.19039955, 0.25386607,
+       0.31733259, 0.38079911, 0.44426563, 0.50773215, 0.57119866,
+       0.63466518, 0.6981317 , 0.76159822, 0.82506474, 0.88853126,
+       0.95199777, 1.01546429, 1.07893081, 1.14239733, 1.20586385,
+       1.26933037, 1.33279688, 1.3962634 , 1.45972992, 1.52319644,
+       1.58666296, 1.65012947, 1.71359599, 1.77706251, 1.84052903,
+       1.90399555, 1.96746207, 2.03092858, 2.0943951 , 2.15786162,
+       2.22132814, 2.28479466, 2.34826118, 2.41172769, 2.47519421,
+       2.53866073, 2.60212725, 2.66559377, 2.72906028, 2.7925268 ,
+       2.85599332, 2.91945984, 2.98292636, 3.04639288, 3.10985939,
+       3.17332591, 3.23679243, 3.30025895, 3.36372547, 3.42719199,
+       3.4906585 , 3.55412502, 3.61759154, 3.68105806, 3.74452458,
+       3.8079911 , 3.87145761, 3.93492413, 3.99839065, 4.06185717,
+       4.12532369, 4.1887902 , 4.25225672, 4.31572324, 4.37918976,
+       4.44265628, 4.5061228 , 4.56958931, 4.63305583, 4.69652235,
+       4.75998887, 4.82345539, 4.88692191, 4.95038842, 5.01385494,
+       5.07732146, 5.14078798, 5.2042545 , 5.26772102, 5.33118753,
+       5.39465405, 5.45812057, 5.52158709, 5.58505361, 5.64852012,
+       5.71198664, 5.77545316, 5.83891968, 5.9023862 , 5.96585272,
+       6.02931923, 6.09278575, 6.15625227, 6.21971879, 6.28318531])
 </pre></div>
 </div>
 </div>
@@ -1086,8 +1158,32 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.        ,  0.99798668,  0.99195481,  0.9819287 ,  0.9679487 ,
+        0.95007112,  0.92836793,  0.90292654,  0.87384938,  0.84125353,
+        0.80527026,  0.76604444,  0.72373404,  0.67850941,  0.63055267,
+        0.58005691,  0.52722547,  0.47227107,  0.41541501,  0.35688622,
+        0.29692038,  0.23575894,  0.17364818,  0.1108382 ,  0.04758192,
+       -0.01586596, -0.07924996, -0.14231484, -0.20480667, -0.26647381,
+       -0.32706796, -0.38634513, -0.44406661, -0.5       , -0.55392006,
+       -0.60560969, -0.65486073, -0.70147489, -0.74526445, -0.78605309,
+       -0.82367658, -0.85798341, -0.88883545, -0.91610846, -0.93969262,
+       -0.95949297, -0.97542979, -0.98743889, -0.99547192, -0.99949654,
+       -0.99949654, -0.99547192, -0.98743889, -0.97542979, -0.95949297,
+       -0.93969262, -0.91610846, -0.88883545, -0.85798341, -0.82367658,
+       -0.78605309, -0.74526445, -0.70147489, -0.65486073, -0.60560969,
+       -0.55392006, -0.5       , -0.44406661, -0.38634513, -0.32706796,
+       -0.26647381, -0.20480667, -0.14231484, -0.07924996, -0.01586596,
+        0.04758192,  0.1108382 ,  0.17364818,  0.23575894,  0.29692038,
+        0.35688622,  0.41541501,  0.47227107,  0.52722547,  0.58005691,
+        0.63055267,  0.67850941,  0.72373404,  0.76604444,  0.80527026,
+        0.84125353,  0.87384938,  0.90292654,  0.92836793,  0.95007112,
+        0.9679487 ,  0.9819287 ,  0.99195481,  0.99798668,  1.        ])
+</pre></div>
 </div>
-<p>Let’s plot for fun…. briefly use matplotlib</p>
+</div>
+</div>
+<p>Let’s plot for fun (cosine plot)…. briefly use matplotlib</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1101,10 +1197,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7fe3b325b0&gt;]
+</pre></div>
 </div>
+<img alt="_images/01-numpy-scipy_55_1.png" src="_images/01-numpy-scipy_55_1.png" />
+</div>
+</div>
+<p>Reshape Arrays</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
@@ -1115,10 +1218,21 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 2, 3, 4],
+       [5, 6, 7, 8, 9]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 </pre></div>
 </div>
 </div>
@@ -1129,17 +1243,28 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">Input In [51],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a2</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="ne">ValueError</span>: cannot reshape array of size 10 into shape (3,4)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1">#ten rows and one column</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="broadcasting">
-<h1>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">#</a></h1>
+</section>
+<section id="broadcasting">
+<h3>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">a2</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
@@ -1150,6 +1275,20 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0],
+       [1],
+       [2],
+       [3],
+       [4],
+       [5],
+       [6],
+       [7],
+       [8],
+       [9]])
 </pre></div>
 </div>
 </div>
@@ -1167,10 +1306,29 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">+</span> <span class="n">b2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1,  2,  3],
+       [ 2,  3,  4],
+       [ 3,  4,  5],
+       [ 4,  5,  6],
+       [ 5,  6,  7],
+       [ 6,  7,  8],
+       [ 7,  8,  9],
+       [ 8,  9, 10],
+       [ 9, 10, 11],
+       [10, 11, 12]])
 </pre></div>
 </div>
 </div>
@@ -1196,6 +1354,9 @@ title="Print to PDF"
 </div>
 </div>
 <p>Another (intuitive) example:  adding or multiplying a matrix by a scalar</p>
+<ul class="simple">
+<li><p>Every dimension of a scalar is one</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="n">a3</span> <span class="o">+</span> <span class="mi">1</span>
@@ -1204,53 +1365,75 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="operations-along-axes">
-<h1>operations along axes<a class="headerlink" href="#operations-along-axes" title="Permalink to this headline">#</a></h1>
+<section id="operations-along-axes">
+<h3>Operations Along Axes<a class="headerlink" href="#operations-along-axes" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2],
+       [3, 4]])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="c1"># sum of all elements in an array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># sum of every column</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># sum of every row</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="c1"># cumulative sum</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  3,  6, 10])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># cumulative sum of each row</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 3],
+       [3, 7]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="c1"># min of entire array</span>
 </pre></div>
 </div>
 </div>
@@ -1264,7 +1447,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="c1"># max of entire array</span>
 </pre></div>
 </div>
 </div>
@@ -1277,17 +1460,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="numpy-submodules">
-<h1>numpy submodules<a class="headerlink" href="#numpy-submodules" title="Permalink to this headline">#</a></h1>
-<p>There is a wide range of mathematical functionality provided in the numpy library (See for example <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.html">https://numpy.org/doc/stable/reference/routines.html</a>)</p>
-<p>Some of key submodules include:</p>
-<ul class="simple">
-<li><p>numpy.linalg - linear algebra</p></li>
-<li><p>numpy.fft - Fourier transforms</p></li>
-<li><p>numpy.random - random sampling and various distributions</p></li>
-</ul>
-<section id="final-numpy-fun-estimating-pi">
-<h2>Final numpy fun - estimating <span class="math notranslate nohighlight">\(\pi\)</span><a class="headerlink" href="#final-numpy-fun-estimating-pi" title="Permalink to this headline">#</a></h2>
+<section id="example-estimating-pi">
+<h3>Example: Estimating <span class="math notranslate nohighlight">\(\pi\)</span><a class="headerlink" href="#example-estimating-pi" title="Permalink to this headline">#</a></h3>
 <p><img alt="image.png" src="attachment:image.png" /></p>
 <p>The fraction of sample points that make it into the circle is:</p>
 <div class="math notranslate nohighlight">
@@ -1297,30 +1471,156 @@ title="Print to PDF"
 \[\pi = 4 \frac{N_{inside}}{N_{total}}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># generates a random point between 0 and 1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.46671565546812277
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># creates an array of 1000 random points between 0 and 1</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">in_circle</span> <span class="o">=</span> <span class="p">(((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">in_circle</span> <span class="o">=</span> <span class="p">(((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">in_circle</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">in_circle</span> <span class="c1"># returns which points in the array fall in the circle</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True,  True,  True,  True,  True, False,  True,  True,  True,
+        True,  True,  True,  True,  True, False,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True, False,  True,
+        True,  True,  True,  True,  True,  True,  True,  True, False,
+        True,  True,  True,  True,  True,  True,  True, False, False,
+        True,  True,  True, False, False,  True, False,  True, False,
+        True,  True,  True,  True,  True, False,  True, False,  True,
+        True,  True,  True,  True,  True, False,  True,  True, False,
+       False,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True, False,  True,  True,
+        True, False, False,  True,  True,  True,  True,  True,  True,
+        True, False,  True, False,  True,  True,  True,  True,  True,
+        True, False,  True,  True,  True,  True,  True,  True,  True,
+        True, False,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True, False,  True,  True,  True,  True,  True,
+        True, False, False, False, False,  True,  True,  True,  True,
+        True,  True,  True,  True, False, False,  True, False,  True,
+        True,  True, False, False,  True,  True,  True,  True,  True,
+        True, False,  True,  True,  True, False,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+       False,  True, False,  True,  True, False,  True,  True, False,
+        True,  True,  True,  True,  True,  True,  True,  True, False,
+        True,  True,  True,  True,  True,  True,  True,  True, False,
+        True,  True,  True,  True, False,  True,  True,  True,  True,
+       False,  True,  True, False,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True, False,
+        True,  True,  True, False,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True, False,  True,  True,  True,
+        True,  True,  True,  True, False, False,  True,  True,  True,
+        True,  True,  True,  True,  True,  True, False,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+       False,  True,  True,  True, False, False,  True,  True,  True,
+        True,  True, False,  True, False, False,  True,  True,  True,
+        True,  True,  True,  True,  True, False,  True,  True,  True,
+        True, False,  True,  True,  True,  True,  True, False,  True,
+        True, False,  True,  True,  True,  True,  True,  True,  True,
+        True,  True, False,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True, False, False,  True,  True, False,
+        True,  True, False,  True,  True,  True, False,  True,  True,
+       False, False,  True,  True, False,  True, False,  True,  True,
+       False,  True,  True,  True, False,  True,  True,  True,  True,
+       False, False,  True,  True, False,  True,  True,  True, False,
+       False,  True,  True,  True,  True,  True,  True,  True,  True,
+       False,  True,  True,  True,  True,  True,  True, False,  True,
+        True,  True,  True,  True,  True, False,  True,  True,  True,
+        True, False, False,  True, False, False,  True,  True, False,
+       False, False,  True,  True,  True,  True, False,  True,  True,
+        True,  True,  True, False,  True,  True,  True, False,  True,
+       False,  True,  True,  True,  True,  True,  True,  True,  True,
+        True, False,  True,  True,  True,  True,  True, False, False,
+        True,  True, False,  True,  True,  True,  True,  True,  True,
+        True,  True,  True, False,  True,  True,  True, False,  True,
+        True,  True,  True,  True,  True,  True, False,  True, False,
+        True,  True,  True,  True,  True, False,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True, False,  True,  True,  True, False,  True,
+        True,  True,  True,  True, False, False,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+       False,  True, False,  True,  True,  True,  True,  True,  True,
+        True, False, False,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True, False,  True,  True,  True,
+       False,  True, False,  True,  True,  True,  True, False,  True,
+        True,  True,  True, False,  True, False, False,  True, False,
+        True,  True,  True, False,  True,  True,  True,  True, False,
+       False,  True,  True,  True,  True,  True, False,  True,  True,
+       False, False, False, False,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True, False,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True, False,  True,  True, False,  True, False,  True,
+        True,  True,  True,  True, False, False,  True,  True, False,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True, False, False,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True, False,  True,  True,
+        True, False,  True,  True,  True,  True, False,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True, False,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True, False,  True,  True,  True,  True,
+        True,  True,  True,  True, False, False,  True,  True,  True,
+        True,  True,  True, False,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True, False,  True,  True,  True,  True,  True,  True,  True,
+       False,  True, False,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True, False,
+        True,  True, False,  True, False, False,  True,  True,  True,
+       False,  True,  True,  True,  True,  True,  True, False,  True,
+       False,  True, False,  True,  True,  True,  True, False,  True,
+       False,  True,  True, False,  True,  True,  True,  True,  True,
+        True,  True,  True,  True, False,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True, False, False,  True,
+       False,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True, False,  True,  True,  True,  True,  True,  True,
+        True, False,  True,  True,  True,  True, False,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True, False,  True,  True, False,  True,  True,
+        True,  True,  True, False,  True,  True,  True,  True,  True,
+       False,  True,  True, False,  True,  True,  True,  True,  True,
+       False, False,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True, False,  True,  True,  True,
+       False, False,  True,  True,  True,  True,  True, False,  True,
+        True,  True,  True,  True,  True, False,  True,  True, False,
+       False,  True, False,  True,  True, False,  True,  True,  True,
+        True,  True, False,  True,  True,  True,  True,  True, False,
+        True,  True, False,  True,  True, False,  True,  True, False,
+       False,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True, False,  True,  True, False,  True,
+       False,  True,  True,  True, False,  True,  True,  True,  True,
+       False,  True,  True,  True, False,  True,  True,  True,  True,
+        True,  True,  True, False,  True,  True,  True,  True,  True,
+        True])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">in_circle</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">in_circle</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># returns the number of false values and true values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([False,  True]), array([199, 801]))
 </pre></div>
 </div>
 </div>
@@ -1338,17 +1638,28 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">*</span> <span class="n">in_counts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([199, 801])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pi_estimate</span><span class="p">(</span><span class="n">nums</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">*</span> <span class="n">in_counts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span> <span class="c1"># estimate of pi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.204
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the above steps put into one function</span>
+<span class="k">def</span> <span class="nf">pi_estimate</span><span class="p">(</span><span class="n">nums</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
     <span class="n">in_circle</span> <span class="o">=</span> <span class="p">(((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
@@ -1366,6 +1677,53 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pi = 3.2
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.72996359, 0.50194945, 0.24232199, 0.64431823, 0.59245865,
+        0.06951008, 0.73130542, 0.31616278, 0.00205334, 0.91423149,
+        0.14836325, 0.53732033, 0.50668485, 0.37809231, 0.08694693,
+        0.0760509 , 0.03157349, 0.98048153, 0.51671279, 0.48166525,
+        0.25816032, 0.04696615, 0.5537599 , 0.33026225, 0.58291482,
+        0.21768854, 0.53979488, 0.04748038, 0.73752307, 0.10489192,
+        0.98353029, 0.92573483, 0.03082395, 0.95148458, 0.28410829,
+        0.39690434, 0.28501137, 0.54932272, 0.17570694, 0.42541873,
+        0.04655967, 0.3354956 , 0.02054312, 0.10142963, 0.95976848,
+        0.02344544, 0.97631075, 0.59923246, 0.64947709, 0.48729324,
+        0.61595003, 0.87943552, 0.74332329, 0.85596232, 0.35471213,
+        0.88893938, 0.63087146, 0.95066436, 0.93232515, 0.60761306,
+        0.33088204, 0.73813118, 0.28474944, 0.2584069 , 0.7063678 ,
+        0.43285687, 0.82755606, 0.41871591, 0.16528524, 0.81476165,
+        0.90323263, 0.85214345, 0.95342774, 0.43518644, 0.30425216,
+        0.77181626, 0.14278737, 0.66141462, 0.68064299, 0.10678406,
+        0.70220038, 0.27470887, 0.15034148, 0.44445258, 0.20407304,
+        0.11598777, 0.28571181, 0.73416322, 0.49660067, 0.67728805,
+        0.70798116, 0.17545777, 0.55237592, 0.13807384, 0.63892638,
+        0.04586523, 0.87289276, 0.43607708, 0.8650851 , 0.13762806]),
+ array([0.51601878, 0.01745091, 0.41035825, 0.27548412, 0.62233108,
+        0.83271438, 0.67880714, 0.06530561, 0.6156618 , 0.02549962,
+        0.6179165 , 0.39476992, 0.80060504, 0.17151785, 0.10506453,
+        0.62367624, 0.81524554, 0.44094477, 0.79289033, 0.0485049 ,
+        0.81266536, 0.21336746, 0.57738188, 0.47587202, 0.44642833,
+        0.42793449, 0.64950287, 0.46870012, 0.47409479, 0.42196628,
+        0.09870563, 0.82620594, 0.65593017, 0.34465528, 0.3961626 ,
+        0.40872027, 0.75290953, 0.67866549, 0.1119962 , 0.66847425,
+        0.72555858, 0.80766243, 0.96764955, 0.7402046 , 0.38296966,
+        0.81085195, 0.97124767, 0.18505798, 0.34216784, 0.28840169,
+        0.28149494, 0.79698972, 0.43756517, 0.38655255, 0.75798274,
+        0.34011679, 0.40070318, 0.78712802, 0.72212608, 0.90077507,
+        0.6337151 , 0.43733225, 0.50672173, 0.82310015, 0.55317411,
+        0.99262369, 0.88060939, 0.67534926, 0.50539703, 0.39716123,
+        0.57292081, 0.93804589, 0.88194311, 0.41611751, 0.26586717,
+        0.37326136, 0.38955074, 0.54008369, 0.75072132, 0.3178744 ,
+        0.19765503, 0.7119211 , 0.61381848, 0.08804004, 0.54963186,
+        0.90003277, 0.33605328, 0.9644569 , 0.78036626, 0.85932517,
+        0.32807953, 0.45550003, 0.37682396, 0.40176775, 0.74100538,
+        0.51447746, 0.54323063, 0.44740601, 0.15022499, 0.15862045]))
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1379,11 +1737,23 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [47],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">pi_estimate</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="scipy">
-<h1>SciPy<a class="headerlink" href="#scipy" title="Permalink to this headline">#</a></h1>
+<section id="scipy">
+<h2>SciPy<a class="headerlink" href="#scipy" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>SciPy is the core package for scientific routines in Python</p></li>
 <li><p>it operates efficiently on numpy arrays and the two are intended to work together</p></li>
@@ -1409,6 +1779,8 @@ title="Print to PDF"
 <li><p>I will show brief examples here and discuss some more scipy material next week.</p></li>
 </ul>
 <p>[Acknowledgement goes to examples from the scipy docs]</p>
+<section id="interpolation">
+<h3>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
@@ -1417,6 +1789,12 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;ro&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb76357dc40&gt;]
+</pre></div>
+</div>
+<img alt="_images/01-numpy-scipy_99_1.png" src="_images/01-numpy-scipy_99_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1428,7 +1806,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear_interp</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># linear interpolation </span>
+<span class="n">linear_interp</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="n">xlin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">ylin</span> <span class="o">=</span> <span class="n">linear_interp</span><span class="p">(</span><span class="n">xlin</span><span class="p">)</span>
@@ -1438,10 +1817,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb763b65b50&gt;]
+</pre></div>
+</div>
+<img alt="_images/01-numpy-scipy_101_1.png" src="_images/01-numpy-scipy_101_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cubic_interp</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cubic interpolation</span>
+<span class="n">cubic_interp</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>
 
 <span class="n">xcub</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">ycub</span> <span class="o">=</span> <span class="n">cubic_interp</span><span class="p">(</span><span class="n">xcub</span><span class="p">)</span>
@@ -1451,9 +1837,16 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb763c3fa30&gt;]
+</pre></div>
 </div>
+<img alt="_images/01-numpy-scipy_102_1.png" src="_images/01-numpy-scipy_102_1.png" />
+</div>
+</div>
+</section>
 <section id="images">
-<h2>images<a class="headerlink" href="#images" title="Permalink to this headline">#</a></h2>
+<h3>Images<a class="headerlink" href="#images" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
@@ -1477,12 +1870,25 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fb763f7f6d0&gt;
+</pre></div>
+</div>
+<img alt="_images/01-numpy-scipy_106_1.png" src="_images/01-numpy-scipy_106_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noisy_parrot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">parrot</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
 <span class="n">noisy_parrot</span> <span class="o">+=</span> <span class="n">parrot</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">parrot</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="c1"># noisy_parrot = ndimage.gaussian_filter(parrot, sigma=5)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qk/hv87dc8s27d5rgnhn23fklgh0000gn/T/ipykernel_21587/3761119477.py:1: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  noisy_parrot = np.copy(parrot).astype(np.float)
 </pre></div>
 </div>
 </div>
@@ -1493,6 +1899,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fb7643f9250&gt;
+</pre></div>
+</div>
+<img alt="_images/01-numpy-scipy_108_1.png" src="_images/01-numpy-scipy_108_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1500,12 +1912,23 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(837, 1116, 3)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">noisy_parrot</span><span class="p">[</span><span class="mi">400</span><span class="p">:,</span><span class="mi">500</span><span class="p">:,]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;uint8&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">noisy_parrot</span><span class="p">[</span><span class="mi">400</span><span class="p">:,</span><span class="mi">500</span><span class="p">:,]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;uint8&#39;</span><span class="p">))</span> <span class="c1"># zoom in</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fb7644f64f0&gt;
+</pre></div>
+</div>
+<img alt="_images/01-numpy-scipy_110_1.png" src="_images/01-numpy-scipy_110_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1521,6 +1944,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fb765769100&gt;
+</pre></div>
+</div>
+<img alt="_images/01-numpy-scipy_112_1.png" src="_images/01-numpy-scipy_112_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1531,11 +1960,19 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rotated_parrot</span><span class="p">[</span><span class="mi">500</span><span class="p">:,:</span><span class="mi">400</span><span class="p">,]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;uint8&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rotated_parrot</span><span class="p">[</span><span class="mi">500</span><span class="p">:,:</span><span class="mi">400</span><span class="p">,]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;uint8&#39;</span><span class="p">))</span> <span class="c1"># rotate image</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fb764e2d8e0&gt;
+</pre></div>
 </div>
+<img alt="_images/01-numpy-scipy_114_1.png" src="_images/01-numpy-scipy_114_1.png" />
+</div>
+</div>
+<p>&lt;img src=”parrot.jpeg” alt=”parrot” width=”200”&gt;</p>
+</section>
 </section>
 </section>
 
@@ -1566,17 +2003,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="stock-report.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="ODE-symbolicmath.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Example:  grabbing time series data from a public API (here Yahoo finance)</p>
+            <p class="prev-next-title">Ex. Solving an ODE with Symbolic Math</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02-matplotlib.html" title="next page">
+    <a class='right-next' id="next-link" href="02-fitting-and-interpolating.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Matplotlib</p>
+        <p class="prev-next-title">Fitting and Interpolating</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -1587,7 +2024,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By The Jupyter Book Community<br/>
+    By Benjamin Winjum<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

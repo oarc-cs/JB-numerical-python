@@ -7,27 +7,29 @@ title: Numerical Programming with Python
 parts:
 - caption: Fundamentals of Python 
   chapters:
-  - file: Start-Here
+  - file: 01-Python-Fundamentals
     title: Python Basics with Examples
+  - file: Python-Libraries
+    title: Intro to Python Libraries
   - file: stock-report
     title: Ex. Grabbing Time Series Data From a Public API
 - caption: Symbolic Math
   chapters:
-  - file: 01-numpy-scipy
-    title: Numpy and SciPy
-- file: 01-symbolic-math
+  - file: 01-symbolic-math
     title: Symbolic Math with SymPy
-- file: 03-ODEs
-    title: Ordinary Differential Equations
+  - file: ODE-symbolicmath
+    title: Ex. Solving ODEs with Symbolic Math
 - caption: Numerical Modeling
   chapters:
+  - file: 01-numpy-scipy
+    title: Numpy and SciPy
   - file: 02-fitting-and-interpolating
     title: Fitting and Interpolating
-  - file: 04-image-teaser
-    title: Image Processing
+  - file: ODE-numericalmodeling2
+    title: Ex. Solving ODEs with Numerical Modeling
 - caption: Data Visualization
   chapters:
-  - file: Matplotlib
-	title: Matplotlib
+  - file: 02-matplotlib
+    title: Matplotlib
   - file: 03-pandas
-	title: Pandas
+    title: Pandas

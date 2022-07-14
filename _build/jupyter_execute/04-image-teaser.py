@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # And now for something completely different <a class="tocSkip">
+# # Image Processing <a class="tocSkip">
 #     
 # There are many, many more topics to pursue.  Good places to continue learning:
 # * The SciPy Lecture Notes: https://scipy-lectures.org/
@@ -10,9 +10,9 @@
 #     
 # The following is a brief teaser for Image Processing
 
-# ### Feature extraction (edge detection)
+# ## Feature Extraction (edge detection)
 
-# In[ ]:
+# In[1]:
 
 
 import numpy as np
@@ -63,7 +63,7 @@ plt.show()
 
 # ## Segmentation
 
-# In[ ]:
+# In[2]:
 
 
 import numpy as np
@@ -113,9 +113,9 @@ plt.subplots_adjust(wspace=0.02, hspace=0.3, top=1, bottom=0.1, left=0, right=1)
 plt.show()
 
 
-# ## Spectral clustering (using advanced libraries such as scikit-learn)
+# ## Spectral Clustering (using advanced libraries such as scikit-learn)
 
-# In[ ]:
+# In[3]:
 
 
 import numpy as np
@@ -125,7 +125,7 @@ from sklearn.feature_extraction import image
 from sklearn.cluster import spectral_clustering
 
 
-# In[ ]:
+# In[4]:
 
 
 l = 100
@@ -144,19 +144,19 @@ circle3 = (x - center3[0])**2 + (y - center3[1])**2 < radius3**2
 circle4 = (x - center4[0])**2 + (y - center4[1])**2 < radius4**2
 
 
-# In[ ]:
+# In[5]:
 
 
 circle1.shape
 
 
-# In[ ]:
+# In[6]:
 
 
 circle2.shape
 
 
-# In[ ]:
+# In[7]:
 
 
 img = circle1 + circle2 + circle3 + circle4

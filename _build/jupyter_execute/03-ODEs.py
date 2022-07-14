@@ -1,13 +1,21 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # Ordinary Differential Equations
 # In solving ODEs, there are several options:
 # 
 # * Wetware method --> put your hand on a pencil and write the solution
 # * Symbolic method --> use symbolic manipulation with software to get an analytical answer
 # * Numerical method --> use approximate methods to estimate the solution without producing an analytical answer
 
-# In[ ]:
+# # Ordinary Differential Equations
+# In solving ODEs, there are several options:
+# 
+# * Wetware method --> put your hand on a pencil and write the solution
+# * Symbolic method --> use symbolic manipulation with software to get an analytical answer
+# * Numerical method --> use approximate methods to estimate the solution without producing an analytical answer
+
+# In[1]:
 
 
 import numpy as np
@@ -17,17 +25,17 @@ import matplotlib.pyplot as plt
 import ipywidgets
 
 
-# In[ ]:
+# In[2]:
 
 
 sympy.init_printing()
 
 
-# # Harmonic oscillator
+# ## Harmonic oscillator
 
 # ## Symbolic manipulation (with SymPy)
 
-# In[ ]:
+# In[3]:
 
 
 t = sympy.Symbol("t")
@@ -35,165 +43,165 @@ omega0 = sympy.Symbol("omega0")
 x = sympy.Function('x')
 
 
-# In[ ]:
+# In[4]:
 
 
 ode = x(t).diff(t, 2) + omega0**2 * x(t)
 
 
-# In[ ]:
+# In[5]:
 
 
 ode
 
 
-# In[ ]:
+# In[6]:
 
 
 ode_sol = sympy.dsolve(ode)
 
 
-# In[ ]:
+# In[7]:
 
 
 ode_sol
 
 
-# In[ ]:
+# In[8]:
 
 
 ode_sol.rhs
 
 
-# In[ ]:
+# In[9]:
 
 
 # initial conditions
 ics = {x(0): 2, x(t).diff(t).subs(t, 0): 3}
 
 
-# In[ ]:
+# In[10]:
 
 
 ics
 
 
-# In[ ]:
+# In[11]:
 
 
 ode_sol = sympy.dsolve(ode,ics=ics)
 
 
-# In[ ]:
+# In[12]:
 
 
 ode_sol
 
 
-# In[ ]:
+# In[13]:
 
 
 ode_sol.rewrite(sympy.cos).simplify()
 
 
-# In[ ]:
+# In[14]:
 
 
 ics
 
 
-# In[ ]:
+# In[15]:
 
 
 ode_sol = sympy.dsolve(ode)
 
 
-# In[ ]:
+# In[16]:
 
 
 ode_sol
 
 
-# In[ ]:
+# In[17]:
 
 
 ode_sol.free_symbols
 
 
-# In[ ]:
+# In[18]:
 
 
 ode_sol.free_symbols - {omega0}
 
 
-# In[ ]:
+# In[19]:
 
 
 (ode_sol.lhs.diff(t,0) - ode_sol.rhs.diff(t,0)).subs(t,0)
 
 
-# In[ ]:
+# In[20]:
 
 
 (ode_sol.lhs.diff(t,0) - ode_sol.rhs.diff(t,0)).subs(t,0).subs(ics)
 
 
-# In[ ]:
+# In[21]:
 
 
 (ode_sol.lhs.diff(t,1) - ode_sol.rhs.diff(t,1)).subs(t,0)
 
 
-# In[ ]:
+# In[22]:
 
 
 (ode_sol.lhs.diff(t,1) - ode_sol.rhs.diff(t,1)).subs(t,0).subs(ics)
 
 
-# In[ ]:
+# In[23]:
 
 
 eqs = [(ode_sol.lhs.diff(t, n) - ode_sol.rhs.diff(t, n)).subs(t, 0).subs(ics)
        for n in range(len(ics))]
 
 
-# In[ ]:
+# In[24]:
 
 
 eqs
 
 
-# In[ ]:
+# In[25]:
 
 
 ode_sol.free_symbols - {omega0}
 
 
-# In[ ]:
+# In[26]:
 
 
 sympy.solve(eqs, ode_sol.free_symbols - set([omega0]))
 
 
-# In[ ]:
+# In[27]:
 
 
 sol_params = sympy.solve(eqs, ode_sol.free_symbols - set([omega0]))
 
 
-# In[ ]:
+# In[28]:
 
 
 x_t_sol = ode_sol.subs(sol_params)
 
 
-# In[ ]:
+# In[29]:
 
 
 x_t_sol
 
 
-# In[ ]:
+# In[30]:
 
 
 x_t_sol.rewrite(sympy.cos).simplify()
@@ -202,55 +210,55 @@ x_t_sol.rewrite(sympy.cos).simplify()
 # Let's use lambdify to plot:  "The primary purpose of this function [lambdify] is to provide a bridge from SymPy expressions to numerical libraries such as NumPy, SciPy, NumExpr, mpmath,
 # and tensorflow."
 
-# In[ ]:
+# In[31]:
 
 
 square = sympy.lambdify(t, t**2)
 
 
-# In[ ]:
+# In[32]:
 
 
 square(6)
 
 
-# In[ ]:
+# In[33]:
 
 
 np.linspace(0,1,10)
 
 
-# In[ ]:
+# In[34]:
 
 
 square(np.linspace(0,1,10))
 
 
-# In[ ]:
+# In[35]:
 
 
 get_ipython().run_line_magic('pinfo', 'sympy.lambdify')
 
 
-# In[ ]:
+# In[36]:
 
 
 expr_func = sympy.lambdify(t, x_t_sol.rhs.subs(omega0,1), 'numpy')
 
 
-# In[ ]:
+# In[37]:
 
 
 xvalues = np.linspace(0, 10, 30)
 
 
-# In[ ]:
+# In[38]:
 
 
 expr_func(xvalues)
 
 
-# In[ ]:
+# In[39]:
 
 
 plt.plot(xvalues,expr_func(xvalues));
@@ -273,7 +281,7 @@ plt.plot(xvalues,expr_func(xvalues));
 # y'(t) = \omega_0^2 x(t)
 # $$
 
-# In[ ]:
+# In[40]:
 
 
 def dxdt(X,t=0):
@@ -281,29 +289,29 @@ def dxdt(X,t=0):
     return np.array([ X[1] , -omega0**2 * X[0] ])
 
 
-# In[ ]:
+# In[41]:
 
 
 xvalues = np.linspace(0, 10, 30)
 scipysoln = integrate.odeint(dxdt, [2,3], xvalues)
 
 
-# In[ ]:
+# In[42]:
 
 
 scipysoln
 
 
-# In[ ]:
+# In[43]:
 
 
 plt.plot(xvalues,scipysoln[:,0],'ro',
          xvalues,expr_func(xvalues));
 
 
-# # Damped harmonic oscillator
+# ## Damped Harmonic Oscillator
 
-# In[ ]:
+# In[44]:
 
 
 t = sympy.Symbol("t")
@@ -312,61 +320,61 @@ gamma = sympy.Symbol("gamma")
 x = sympy.Function('x')
 
 
-# In[ ]:
+# In[45]:
 
 
 x = sympy.Function("x")
 
 
-# In[ ]:
+# In[46]:
 
 
 ode = x(t).diff(t, 2) + 2 * gamma * omega0 * x(t).diff(t) + omega0**2 * x(t)
 
 
-# In[ ]:
+# In[47]:
 
 
 ode
 
 
-# In[ ]:
+# In[48]:
 
 
 ode_sol = sympy.dsolve(ode)
 
 
-# In[ ]:
+# In[49]:
 
 
 ode_sol
 
 
-# In[ ]:
+# In[50]:
 
 
 ics = {x(0): 1, x(t).diff(t).subs(t, 0): 0}
 
 
-# In[ ]:
+# In[51]:
 
 
 ics
 
 
-# In[ ]:
+# In[52]:
 
 
 ode_sol = sympy.dsolve(ode,ics=ics)
 
 
-# In[ ]:
+# In[53]:
 
 
 ode_sol
 
 
-# In[ ]:
+# In[54]:
 
 
 # sol = ode_sol
@@ -379,49 +387,49 @@ ode_sol
 # x_t_sol = sol.subs(sol_params)
 
 
-# In[ ]:
+# In[55]:
 
 
 # eqs
 
 
-# In[ ]:
+# In[56]:
 
 
 # free_params
 
 
-# In[ ]:
+# In[57]:
 
 
 # type(free_params)
 
 
-# In[ ]:
+# In[58]:
 
 
 # ode_sol
 
 
-# In[ ]:
+# In[59]:
 
 
 # x_t_sol
 
 
-# In[ ]:
+# In[60]:
 
 
 # x_t_critical = sympy.limit(x_t_sol.rhs, gamma, 1)
 
 
-# In[ ]:
+# In[61]:
 
 
 # x_t_critical
 
 
-# In[ ]:
+# In[62]:
 
 
 def plotDampedOsc(omega0in=15,gammain=0.1):
@@ -432,25 +440,25 @@ def plotDampedOsc(omega0in=15,gammain=0.1):
     plt.ylim(-1.5,1.5)
 
 
-# In[ ]:
+# In[63]:
 
 
 plotDampedOsc(2*np.pi, 0.2)
 
 
-# In[ ]:
+# In[64]:
 
 
 ipywidgets.interact(plotDampedOsc,omega0in=(1,20),gammain=(0.02,1.5,0.02))
 
 
-# In[ ]:
+# In[65]:
 
 
 sympy.limit(x_t_sol.rhs, gamma, 1)
 
 
-# # Lorenz Equations
+# ## Lorenz Equations
 # 
 # $$
 # x'(t) = \sigma(y - x)
@@ -462,7 +470,7 @@ sympy.limit(x_t_sol.rhs, gamma, 1)
 # z'(t) = x y - \beta z
 # $$
 
-# In[ ]:
+# In[66]:
 
 
 # define the initial system state (aka x, y, z positions in space)
@@ -480,13 +488,13 @@ interval = 100
 time_points = np.linspace(start_time, end_time, end_time * interval)
 
 
-# In[ ]:
+# In[67]:
 
 
 time_points
 
 
-# In[ ]:
+# In[68]:
 
 
 def lorenz(state, t):
@@ -497,13 +505,13 @@ def lorenz(state, t):
     return [dxdt, dydt, dzdt]
 
 
-# In[ ]:
+# In[69]:
 
 
 lorenzsoln = integrate.odeint(lorenz, initial_state, time_points)
 
 
-# In[ ]:
+# In[70]:
 
 
 fig = plt.figure(figsize=(12, 9))
@@ -514,13 +522,13 @@ z = lorenzsoln[:, 2]
 ax.plot(x, y, z, color='g', alpha=0.7, linewidth=0.7)
 
 
-# In[ ]:
+# In[71]:
 
 
 import ipywidgets
 
 
-# In[ ]:
+# In[72]:
 
 
 def plotlorenz(end=1):
@@ -537,6 +545,18 @@ def plotlorenz(end=1):
     ax.plot(x, y, z, color='g', alpha=0.7, linewidth=0.7)
 
 ipywidgets.interact(plotlorenz,end=(1,60))
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:

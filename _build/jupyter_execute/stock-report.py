@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Example:  grabbing time series data from a public API (here Yahoo finance)
+# ## Example:  Grabbing Time Series Data from a Public API (here Yahoo finance)
 # 
 # "Yahoo_fin is a Python 3 package designed to scrape historical stock price data, as well as to provide current information on market caps, dividend yields, and which stocks comprise the major exchanges. Additional functionality includes scraping income statements, balance sheets, cash flows, holder information, and analyst data. The package includes the ability to scrape live (real-time) stock prices, capture cryptocurrency data, and get the most actively traded stocks on a current trading day. Yahoo_fin also contains a module for retrieving option prices and expiration dates." 
 # 
 # -- [yahoo_fin documentation](http://theautomatic.net/yahoo_fin-documentation/)
 
-# In[ ]:
+# In[1]:
 
 
 import yahoo_fin.stock_info as si

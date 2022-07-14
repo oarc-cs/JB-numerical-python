@@ -1,28 +1,38 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Numerical Programming with Python, Part 2:   <a class="tocSkip">
-# ## Intro to NumPy, SciPy, and Pandas (and Matplotlib)  <a class="tocSkip">
+# # NumPy and SciPy 
 
-# ![image.png](attachment:image.png)
+# ## Using NumPy to Look at Series of Data
 
-# # Brief review from the end of last week
-
-# ## Functions
-
-# Simple example: compound interest calculator with annual contributions
-# 
-# * p = principal
-# * r = annual interest rate in percent
-# * y = year of the balance
-# * c = annual contribution (made at the start of the year)
-# 
-# $$\text{Balance}(y) = p(1 + r)^y + c\left[\frac{(1 + r)^{y+1} - (1 + r)}{r} \right]$$
-
-# In[ ]:
+# In[1]:
 
 
-def investment_balance(principal,rate,year,contribution):
+# set these as constants
+p = 1000
+y = 1
+c = 100
+
+
+# In[2]:
+
+
+import benpy
+
+
+# In[3]:
+
+
+# %load benpy.py
+def compound_calculator(principal,rate,year,contribution):
+    '''
+    compound_calculator(p,r,y,c) calculates the value at year y of an investment
+    p = principal
+    r = interest rate (percent value)
+    y = year
+    c = contribution at end of each year
+    '''
+
     p = principal
     r = rate/100
     y = year
@@ -31,44 +41,15 @@ def investment_balance(principal,rate,year,contribution):
     return balance
 
 
-# In[ ]:
-
-
-investment_balance(rate=5, principal=1000, contribution=100, year=1)
-
-
-# ## Modules
-
-# In[ ]:
-
-
-import benpy
-
-
-# In[ ]:
-
-
-benpy.compound_calculator(rate=5, principal=1000, contribution=100, year=1)
-
-
-# ## Using these to look at series of data
-
-# In[ ]:
-
-
-# set these as constants
-p = 1000
-y = 1
-c = 100
-
-
-# In[ ]:
+# In[4]:
 
 
 rates = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
-# In[ ]:
+# Calculate the balance for each of the given rates 
+
+# In[5]:
 
 
 balance = []
@@ -79,197 +60,136 @@ print(balance)
 
 
 # This is what we might like to do:
-# `balance = benpy.compound_calculator(p,rates,y,c)`
+# `balance = benpy.compound_calculator(p,rates,y,c)
+# * Has the list of rates directly in the function call
 
-# Numpy can help.
-
-# ![image.png](attachment:image.png)
-# 
-# https://numpy.org/
-
-# ![image.png](attachment:image.png)
-
-# https://www.scipy.org/
-
-# ![image.png](attachment:image.png)
-
-# https://matplotlib.org/
-
-# The "SciPy ecosystem" of scientific computing in Python builds upon a small core of packages:
-# https://www.scipy.org/about.html
-# 
-# * **Python**, a general purpose programming language. It is interpreted and dynamically typed and is very well suited for interactive work and quick prototyping, while being powerful enough to write large applications in.
-# 
-# * **NumPy**, the fundamental package for numerical computation. It defines the numerical array and matrix types and basic operations on them.
-# 
-# * The **SciPy library**, a collection of numerical algorithms and domain-specific toolboxes, including signal processing, optimization, statistics, and much more.
-# 
-# * **Matplotlib**, a mature and popular plotting package that provides publication-quality 2-D plotting, as well as rudimentary 3-D plotting.
-
-# ![image.png](attachment:image.png)
-
-# https://pandas.pydata.org/
-# 
-# Data manipulation in Python can be greatly facilitated with the Pandas library, and it may be one of the most widely used tools for data science.
-# 
-# Pandas data-manipulation capabilities are built on top of NumPy, utilizing its fast array processing, and its graphing capabilities are built on top of Matplotlib.
-
-# ## Using NumPy to look at series of data
-
-# In[ ]:
-
-
-# set these as constants
-p = 1000
-y = 1
-c = 100
-
-
-# In[ ]:
-
-
-rates = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-
-# In[ ]:
-
-
-balance = []
-for i in rates:
-    r = i
-    balance.append(benpy.compound_calculator(p,r,y,c))
-print(balance)
-
-
-# This is what we might like to do:
-# `balance = benpy.compound_calculator(p,rates,y,c)`
-
-# In[ ]:
+# In[6]:
 
 
 import numpy as np
 
 
-# In[ ]:
+# In[7]:
 
 
 ratesnp = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 
-# In[ ]:
+# In[8]:
 
 
 ratesnp
 
 
-# In[ ]:
+# In[9]:
 
 
 balancenp = benpy.compound_calculator(p,ratesnp,y,c)
 
 
-# In[ ]:
+# In[10]:
 
 
 balancenp
 
 
 # ### We're going to use a bit of ipython "magics" to look at timings.... this won't work in scripts, but works well here in the Jupyter notebook
+# * %%timeit times everything in the given cell
 
-# In[ ]:
+# In[11]:
 
 
 get_ipython().run_cell_magic('timeit', '', 'balance = []\nfor i in rates:\n    r = i\n    balance.append(benpy.compound_calculator(p,r,y,c))')
 
 
-# In[ ]:
+# In[12]:
 
 
 get_ipython().run_cell_magic('timeit', '', 'balancenp = benpy.compound_calculator(p,ratesnp,y,c)')
 
 
-# In[ ]:
+# In[13]:
 
 
 ratesnp = np.arange(1,11)
 
 
-# In[ ]:
+# In[14]:
 
 
 ratesnp
 
 
-# In[ ]:
+# In[15]:
 
 
 get_ipython().run_cell_magic('timeit', '', 'balance = []\nfor i in range(1,10000):\n    r = i\n    balance.append(benpy.compound_calculator(p,r,y,c))')
 
 
-# In[ ]:
+# In[16]:
 
 
 get_ipython().run_cell_magic('timeit', '', 'ratesnp = np.arange(1,10000)\nbalancenp = benpy.compound_calculator(p,ratesnp,y,c)')
 
 
-# # basic operations with n-dimensional arrays
+# ### Basic Operations with N-dimensional Arrays
 
-# In[ ]:
+# In[17]:
 
 
 ratesnp
 
 
-# In[ ]:
+# In[18]:
 
 
 a = np.array([[1,2],[3,4]])
 b = np.array([[-4,-3],[-2,-1]])
 
 
-# In[ ]:
+# In[19]:
 
 
 a
 
 
-# In[ ]:
+# In[20]:
 
 
 b
 
 
-# In[ ]:
+# In[21]:
 
 
 a+b
 
 
-# In[ ]:
+# In[22]:
 
 
 a-b
 
 
-# In[ ]:
+# In[23]:
 
 
 a/b
 
 
-# In[ ]:
+# In[24]:
 
 
 a*b
 
 
-# In[ ]:
+# In[25]:
 
 
-np.matmul(a,b)
+np.matmul(a,b) # matrix multiplication
 
 
-# In[ ]:
+# In[26]:
 
 
 # array attributes
@@ -279,158 +199,160 @@ print(a.size)
 print(a.dtype)
 
 
-# In[ ]:
+# In[27]:
 
 
 a.T
 
 
-# # Indexing and slicing
+# #### Indexing and Slicing
 
-# In[ ]:
+# In[28]:
 
 
 a[0]
 
 
-# In[ ]:
+# In[29]:
 
 
 a[0:2]
 
 
-# In[ ]:
+# In[30]:
 
 
 a[1:4]
 
 
-# In[ ]:
+# In[31]:
 
 
 a[2:4]
 
 
-# In[ ]:
+# In[32]:
 
 
 a
 
 
-# In[ ]:
+# In[33]:
 
 
 a[0:1,0]
 
 
-# In[ ]:
+# In[34]:
 
 
 a[:,0]
 
 
-# In[ ]:
+# In[35]:
 
 
 a[1,:]
 
 
-# In[ ]:
+# In[36]:
 
 
 a > 2
 
 
-# In[ ]:
+# In[37]:
 
 
-a[a > 2]
+a[a > 2] #returns all elements that are greater than 2
 
 
-# In[ ]:
+# In[38]:
 
 
 a[a % 2 == 0]
 
 
-# # creating some arrays
+# #### Creating Some Arrays
 
-# In[ ]:
+# In[39]:
 
 
 np.arange(10)
 
 
-# In[ ]:
+# In[40]:
 
 
 np.arange(1,11,0.5)
 
 
-# In[ ]:
+# In[41]:
 
 
 np.arange(-1,1,0.2)
 
 
-# In[ ]:
+# In[42]:
 
 
 np.linspace(-1,1,11)
 
 
-# In[ ]:
+# In[43]:
 
 
 np.linspace(0,2*np.pi,100)
 
 
-# In[ ]:
+# In[44]:
 
 
 x = np.linspace(0,2*np.pi,100)
 y = np.cos(x)
 
 
-# In[ ]:
+# In[45]:
 
 
 y
 
 
-# Let's plot for fun.... briefly use matplotlib
+# Let's plot for fun (cosine plot).... briefly use matplotlib
 
-# In[ ]:
+# In[46]:
 
 
 import matplotlib.pyplot as plt
 
 
-# In[ ]:
+# In[47]:
 
 
 plt.plot(x,y,'ro')
 
 
-# In[ ]:
+# Reshape Arrays
+
+# In[48]:
 
 
-a2 = np.arange(10).reshape((2,5))
+a2 = np.arange(10).reshape((2,5)) 
 
 
-# In[ ]:
+# In[49]:
 
 
 a2
 
 
-# In[ ]:
+# In[50]:
 
 
-a2.reshape(10)
+a2.reshape(10) 
 
 
-# In[ ]:
+# In[51]:
 
 
 a2.reshape((3,4))
@@ -439,36 +361,36 @@ a2.reshape((3,4))
 # In[ ]:
 
 
-a2.reshape((10,1))
+a2.reshape((10,1)) #ten rows and one column
 
 
-# # Broadcasting
+# ### Broadcasting
 
-# In[ ]:
+# In[26]:
 
 
 a2 = a2.reshape((10,1))
 
 
-# In[ ]:
+# In[27]:
 
 
 a2
 
 
-# In[ ]:
+# In[28]:
 
 
 b2 = np.array([1,2,3])
 
 
-# In[ ]:
+# In[29]:
 
 
 b2
 
 
-# In[ ]:
+# In[30]:
 
 
 a2 + b2
@@ -492,6 +414,7 @@ a3 * b3
 
 
 # Another (intuitive) example:  adding or multiplying a matrix by a scalar
+# * Every dimension of a scalar is one
 
 # In[ ]:
 
@@ -499,48 +422,48 @@ a3 * b3
 2 * a3 + 1
 
 
-# # operations along axes
+# ### Operations Along Axes
 
-# In[ ]:
+# In[31]:
 
 
 a
 
 
-# In[ ]:
+# In[35]:
 
 
-a.sum()
-
-
-# In[ ]:
-
-
-a.sum(axis=0)
+a.sum() # sum of all elements in an array
 
 
 # In[ ]:
 
 
-a.sum(axis=1)
+a.sum(axis=0) # sum of every column
 
 
 # In[ ]:
 
 
-a.cumsum()
+a.sum(axis=1) # sum of every row
+
+
+# In[33]:
+
+
+a.cumsum() # cumulative sum
+
+
+# In[34]:
+
+
+a.cumsum(axis=1) # cumulative sum of each row
 
 
 # In[ ]:
 
 
-a.cumsum(axis=1)
-
-
-# In[ ]:
-
-
-a.min()
+a.min() # min of entire array
 
 
 # In[ ]:
@@ -552,7 +475,7 @@ a.min(axis=0)
 # In[ ]:
 
 
-a.max()
+a.max() # max of entire array
 
 
 # In[ ]:
@@ -561,16 +484,7 @@ a.max()
 a.max(axis=1)
 
 
-# # numpy submodules
-# 
-# There is a wide range of mathematical functionality provided in the numpy library (See for example https://numpy.org/doc/stable/reference/routines.html)
-# 
-# Some of key submodules include:
-# * numpy.linalg - linear algebra
-# * numpy.fft - Fourier transforms
-# * numpy.random - random sampling and various distributions
-
-# ## Final numpy fun - estimating $\pi$
+# ### Example: Estimating $\pi$
 
 # ![image.png](attachment:image.png)
 
@@ -582,53 +496,54 @@ a.max(axis=1)
 # 
 # $$\pi = 4 \frac{N_{inside}}{N_{total}}$$
 
-# In[ ]:
+# In[39]:
 
 
-np.random.uniform(0,1)
+np.random.uniform(0,1) # generates a random point between 0 and 1
 
 
-# In[ ]:
+# In[40]:
 
 
-x = np.random.uniform(0,1,1000)
+x = np.random.uniform(0,1,1000) # creates an array of 1000 random points between 0 and 1
 y = np.random.uniform(0,1,1000)
-in_circle = (((x-0.5)**2 + (y-0.5)**2) < 0.5**2)
+in_circle = (((x-0.5)**2 + (y-0.5)**2) < 0.5**2) 
 
 
-# In[ ]:
+# In[38]:
 
 
-in_circle
+in_circle # returns which points in the array fall in the circle
 
 
-# In[ ]:
+# In[41]:
 
 
-np.unique(in_circle, return_counts=True)
+np.unique(in_circle, return_counts=True) # returns the number of false values and true values
 
 
-# In[ ]:
+# In[42]:
 
 
 in_unique, in_counts = np.unique(in_circle, return_counts=True)
 
 
-# In[ ]:
+# In[43]:
 
 
 in_counts
 
 
-# In[ ]:
+# In[44]:
 
 
-4 * in_counts[1] / 1000
+4 * in_counts[1] / 1000 # estimate of pi
 
 
-# In[ ]:
+# In[45]:
 
 
+# the above steps put into one function
 def pi_estimate(nums = 1000):
     x = np.random.uniform(0,1,nums)
     y = np.random.uniform(0,1,nums)
@@ -639,13 +554,13 @@ def pi_estimate(nums = 1000):
     return x,y
 
 
-# In[ ]:
+# In[46]:
 
 
 pi_estimate(100)
 
 
-# In[ ]:
+# In[47]:
 
 
 fig,ax = plt.subplots(figsize=(5,5))
@@ -657,7 +572,7 @@ plt.gca().add_patch(circle1)
 plt.show();
 
 
-# # SciPy
+# ## SciPy
 # 
 # * SciPy is the core package for scientific routines in Python
 # * it operates efficiently on numpy arrays and the two are intended to work together
@@ -681,7 +596,9 @@ plt.show();
 # 
 # [Acknowledgement goes to examples from the scipy docs]
 
-# In[ ]:
+# ### Interpolation
+
+# In[50]:
 
 
 x = np.linspace(0,2*np.pi,10)
@@ -690,15 +607,16 @@ y = np.cos(x) + noise
 plt.plot(x,y,'ro')
 
 
-# In[ ]:
+# In[51]:
 
 
 from scipy.interpolate import interp1d
 
 
-# In[ ]:
+# In[52]:
 
 
+# linear interpolation 
 linear_interp = interp1d(x, y)
 
 xlin = np.linspace(0, 2*np.pi, 100)
@@ -708,9 +626,10 @@ plt.plot(x,y,'ro')
 plt.plot(xlin,ylin,'b-')
 
 
-# In[ ]:
+# In[53]:
 
 
+# cubic interpolation
 cubic_interp = interp1d(x, y, kind='cubic')
 
 xcub = np.linspace(0, 2*np.pi, 100)
@@ -720,9 +639,9 @@ plt.plot(x,y,'ro')
 plt.plot(xcub,ycub,'b-')
 
 
-# ## images
+# ### Images
 
-# In[ ]:
+# In[54]:
 
 
 import imageio
@@ -731,19 +650,19 @@ from scipy import ndimage
 import numpy as np
 
 
-# In[ ]:
+# In[55]:
 
 
 parrot = imageio.imread('parrot.jpeg')
 
 
-# In[ ]:
+# In[56]:
 
 
 plt.imshow(parrot)
 
 
-# In[ ]:
+# In[57]:
 
 
 noisy_parrot = np.copy(parrot).astype(np.float)
@@ -751,44 +670,52 @@ noisy_parrot += parrot.std() * 0.1 * np.random.standard_normal(parrot.shape)
 # noisy_parrot = ndimage.gaussian_filter(parrot, sigma=5)
 
 
-# In[ ]:
+# In[58]:
 
 
 plt.imshow(noisy_parrot.astype('uint8'))
 
 
-# In[ ]:
+# In[59]:
 
 
 noisy_parrot.shape
 
 
-# In[ ]:
+# In[60]:
 
 
-plt.imshow(noisy_parrot[400:,500:,].astype('uint8'))
+plt.imshow(noisy_parrot[400:,500:,].astype('uint8')) # zoom in
 
 
-# In[ ]:
+# In[65]:
 
 
 median_parrot = ndimage.median_filter(noisy_parrot, size=5)
 
 
-# In[ ]:
+# In[62]:
 
 
 plt.imshow(median_parrot[400:,500:,].astype('uint8'))
 
 
-# In[ ]:
+# In[63]:
 
 
 rotated_parrot = ndimage.rotate(noisy_parrot, -90)
 
 
+# In[64]:
+
+
+plt.imshow(rotated_parrot[500:,:400,].astype('uint8')) # rotate image
+
+
+# <img src="parrot.jpeg” alt="parrot” width="200">
+
 # In[ ]:
 
 
-plt.imshow(rotated_parrot[500:,:400,].astype('uint8'))
+
 

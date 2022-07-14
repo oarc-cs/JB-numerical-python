@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Example: grabbing time series data from a public API (here Yahoo finance) &#8212; Numerical Programming with Python Part 1, 2 &amp; 3</title>
+    <title>Example: Grabbing Time Series Data from a Public API (here Yahoo finance) &#8212; Numerical Programming with Python</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,10 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Numerical Programming with Python, Part 2:" href="01-numpy-scipy.html" />
-    <link rel="prev" title="Numerical Programming with Python, Part 1: Python Basics" href="Start-Here.html" />
+    <link rel="next" title="Symbolic Math with SymPy" href="01-symbolic-math.html" />
+    <link rel="prev" title="Intro to Python Libraries" href="Python-Libraries.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -97,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Numerical Programming with Python Part 1, 2 & 3</h1>
+      <h1 class="site-logo" id="site-title">Numerical Programming with Python</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -109,19 +111,24 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    Winter 2021 IDRE Numerical Programming with Python
+                    Numerical Programming with Python
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Part 1
+  Fundamentals of Python
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Start-Here.html">
-   Numerical Programming with Python, Part 1:  Python Basics
+   Python Basics with Examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python-Libraries.html">
+   Intro to Python Libraries
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -132,17 +139,49 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Part 2
+  Symbolic Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-symbolic-math.html">
+   Symbolic Math with SymPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ODE-symbolicmath.html">
+   Ex. Solving ODEs with Symbolic Math
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Numerical Modeling
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-numpy-scipy.html">
-   Numerical Programming with Python, Part 2:
-   <a class="tocSkip">
-   </a>
+   Numpy and SciPy
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-fitting-and-interpolating.html">
+   Fitting and Interpolating
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ODE-numericalmodeling.html">
+   Ex. Solving ODEs with Numerical Modeling
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Visualization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02-matplotlib.html">
    Matplotlib
@@ -150,34 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03-pandas.html">
-   Basic info
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Part 3
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01-symbolic-math.html">
-   Numerical Modeling
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-fitting-and-interpolating.html">
-   Our familiar example from previous weeks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-ODEs.html">
-   Harmonic oscillator
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-image-teaser.html">
-   Unknown
+   Pandas
   </a>
  </li>
 </ul>
@@ -394,7 +406,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Example:  grabbing time series data from a public API (here Yahoo finance)</h1>
+                <h1>Example:  Grabbing Time Series Data from a Public API (here Yahoo finance)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -407,7 +419,7 @@ title="Print to PDF"
               <div>
                 
   <section id="example-grabbing-time-series-data-from-a-public-api-here-yahoo-finance">
-<h1>Example:  grabbing time series data from a public API (here Yahoo finance)<a class="headerlink" href="#example-grabbing-time-series-data-from-a-public-api-here-yahoo-finance" title="Permalink to this headline">#</a></h1>
+<h1>Example:  Grabbing Time Series Data from a Public API (here Yahoo finance)<a class="headerlink" href="#example-grabbing-time-series-data-from-a-public-api-here-yahoo-finance" title="Permalink to this headline">#</a></h1>
 <p>“Yahoo_fin is a Python 3 package designed to scrape historical stock price data, as well as to provide current information on market caps, dividend yields, and which stocks comprise the major exchanges. Additional functionality includes scraping income statements, balance sheets, cash flows, holder information, and analyst data. The package includes the ability to scrape live (real-time) stock prices, capture cryptocurrency data, and get the most actively traded stocks on a current trading day. Yahoo_fin also contains a module for retrieving option prices and expiration dates.”</p>
 <p>– <a class="reference external" href="http://theautomatic.net/yahoo_fin-documentation/">yahoo_fin documentation</a></p>
 <div class="cell docutils container">
@@ -416,6 +428,18 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">yahoo_fin.stock_info</span> <span class="k">as</span> <span class="nn">si</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">requests</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;yahoo_fin&#39;
 </pre></div>
 </div>
 </div>
@@ -515,17 +539,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Start-Here.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Python-Libraries.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Numerical Programming with Python, Part 1:  Python Basics</p>
+            <p class="prev-next-title">Intro to Python Libraries</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="01-numpy-scipy.html" title="next page">
+    <a class='right-next' id="next-link" href="01-symbolic-math.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Numerical Programming with Python, Part 2:   <a class="tocSkip"></p>
+        <p class="prev-next-title">Symbolic Math with SymPy  <a class="tocSkip"></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -536,7 +560,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By The Jupyter Book Community<br/>
+    By Benjamin Winjum<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

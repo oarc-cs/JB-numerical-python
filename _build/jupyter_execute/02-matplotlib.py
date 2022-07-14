@@ -3,25 +3,12 @@
 
 # # Matplotlib
 
-# https://matplotlib.org/
-# 
-# * "Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python."
-# * "Matplotlib makes easy things easy and hard things possible."
-# 
-# * Matplotlib was built on the NumPy and SciPy frameworks and initially made to enable interactive Matlab-like plotting via gnuplot from iPython
-# 
-# * Gained early traction with support from the Space Telescope Institute and JPL
-# 
-# * Easily one of the go-to libraries for academic publishing needs
-#   * Create publication-ready graphics in a range of formats
-#   * Powerful options to customize all aspects of a figure
-#   
-# * Matplotlib underlies the plotting capabilities of other libraries such as Pandas, Seaborn, and plotnine
-
 # ![image.png](attachment:image.png)
 # Anatomy of a Figure, https://matplotlib.org/3.1.1/gallery/showcase/anatomy.html
 
-# In[ ]:
+# ## Graphing
+
+# In[1]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -30,14 +17,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-# In[ ]:
+# In[2]:
 
 
 plt.plot([1,2,3,4])
 plt.show()
 
 
-# In[ ]:
+# In[3]:
 
 
 plt.plot([1,2,3,4])
@@ -45,7 +32,7 @@ plt.ylabel('some numbers')
 plt.show()
 
 
-# In[ ]:
+# In[4]:
 
 
 fig, ax = plt.subplots()
@@ -55,7 +42,7 @@ ax.set(xlabel = 'list index', ylabel='values',title='First Plot')
 plt.show()
 
 
-# In[ ]:
+# In[5]:
 
 
 fig = plt.figure()
@@ -66,7 +53,7 @@ ax.set(xlabel = 'list index', ylabel='values',title='First Plot')
 plt.show()
 
 
-# In[ ]:
+# In[6]:
 
 
 fig, ax = plt.subplots(1,2,figsize=(10,5))
@@ -78,14 +65,14 @@ ax[1].set(xlabel = 'list index', ylabel='squared values',title='First Plot')
 plt.show()
 
 
-# In[ ]:
+# In[7]:
 
 
 plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
 plt.show()
 
 
-# In[ ]:
+# In[8]:
 
 
 plt.plot([1,2,3,4], [1,4,9,16], 'ro')
@@ -93,7 +80,7 @@ plt.axis([0, 6, 0, 20])
 plt.show()
 
 
-# In[ ]:
+# In[9]:
 
 
 # evenly sampled time at 200ms intervals
@@ -104,7 +91,7 @@ plt.plot(t, t, 'r--', t, t**2, 'bs', t, t**3, 'g^')
 plt.show()
 
 
-# In[ ]:
+# In[10]:
 
 
 def f(t):
@@ -123,7 +110,7 @@ plt.plot(t2, np.cos(2*np.pi*t2), 'r--')
 plt.show()
 
 
-# In[ ]:
+# In[11]:
 
 
 # Fixing random state for reproducibility
@@ -144,7 +131,7 @@ plt.grid(True)
 plt.show()
 
 
-# In[ ]:
+# In[12]:
 
 
 # Fixing random state for reproducibility
@@ -183,7 +170,7 @@ axs[1].text(100, 0.027, r'$\mu=100,\ \sigma=15$')
 plt.show()
 
 
-# In[ ]:
+# In[13]:
 
 
 import numpy as np
@@ -200,7 +187,7 @@ axs[1, 1].hist2d(data[0], data[1])
 plt.show()
 
 
-# In[ ]:
+# In[14]:
 
 
 # This import registers the 3D projection, but is otherwise unused.
@@ -222,7 +209,7 @@ surf = ax.plot_surface(X, Y, Z)
 plt.show()
 
 
-# In[ ]:
+# In[15]:
 
 
 # This import registers the 3D projection, but is otherwise unused.
@@ -251,7 +238,7 @@ fig.colorbar(surf, shrink=0.5, aspect=10)
 plt.show()
 
 
-# In[ ]:
+# In[16]:
 
 
 # This import registers the 3D projection, but is otherwise unused.

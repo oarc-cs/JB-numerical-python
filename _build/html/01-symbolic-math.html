@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Numerical Computing with Python, Part 3: Numerical Modeling &#8212; Numerical Programming with Python Part 1, 2 &amp; 3</title>
+    <title>Symbolic Math with SymPy &#8212; Numerical Programming with Python</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,10 +50,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Our familiar example from previous weeks" href="02-fitting-and-interpolating.html" />
-    <link rel="prev" title="Basic info" href="03-pandas.html" />
+    <link rel="next" title="Ex. Solving an ODE with Symbolic Math" href="ODE-symbolicmath.html" />
+    <link rel="prev" title="Example: Grabbing Time Series Data from a Public API (here Yahoo finance)" href="stock-report.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -97,7 +101,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Numerical Programming with Python Part 1, 2 & 3</h1>
+      <h1 class="site-logo" id="site-title">Numerical Programming with Python</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -109,19 +113,24 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    Winter 2021 IDRE Numerical Programming with Python
+                    Numerical Programming with Python
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Part 1
+  Fundamentals of Python
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Start-Here.html">
-   Numerical Programming with Python, Part 1:  Python Basics
+   Python Basics with Examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python-Libraries.html">
+   Intro to Python Libraries
   </a>
  </li>
  <li class="toctree-l1">
@@ -132,17 +141,49 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Part 2
+  Symbolic Math
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Symbolic Math with SymPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ODE-symbolicmath.html">
+   Ex. Solving ODEs with Symbolic Math
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Numerical Modeling
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-numpy-scipy.html">
-   Numerical Programming with Python, Part 2:
-   <a class="tocSkip">
-   </a>
+   Numpy and SciPy
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-fitting-and-interpolating.html">
+   Fitting and Interpolating
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ODE-numericalmodeling.html">
+   Ex. Solving ODEs with Numerical Modeling
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Visualization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02-matplotlib.html">
    Matplotlib
@@ -150,34 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03-pandas.html">
-   Basic info
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Part 3
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Numerical Modeling
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-fitting-and-interpolating.html">
-   Our familiar example from previous weeks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-ODEs.html">
-   Harmonic oscillator
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-image-teaser.html">
-   Unknown
+   Pandas
   </a>
  </li>
 </ul>
@@ -394,7 +408,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Numerical Computing with Python, Part 3:   Numerical Modeling  <a class="tocSkip"></h1>
+                <h1>Symbolic Math with SymPy  <a class="tocSkip"></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -406,9 +420,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="numerical-computing-with-python-part-3-numerical-modeling-a-class-tocskip">
-<h1>Numerical Computing with Python, Part 3:   Numerical Modeling  <a class="tocSkip"><a class="headerlink" href="#numerical-computing-with-python-part-3-numerical-modeling-a-class-tocskip" title="Permalink to this headline">#</a></h1>
-<p>To start, let’s do a bit of symbolic math to get the gears churning…</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="symbolic-math-with-sympy-a-class-tocskip">
+<h1>Symbolic Math with SymPy  <a class="tocSkip"><a class="headerlink" href="#symbolic-math-with-sympy-a-class-tocskip" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
@@ -419,7 +432,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span> <span class="c1"># makes x a symbol to interact with rather than a python variable</span>
 </pre></div>
 </div>
 </div>
@@ -430,12 +443,18 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_3_0.png" src="_images/01-symbolic-math_3_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_4_0.png" src="_images/01-symbolic-math_4_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -451,19 +470,28 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_6_0.png" src="_images/01-symbolic-math_6_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># differentiate</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_7_0.png" src="_images/01-symbolic-math_7_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># finds the 3rd order derivative</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_8_0.png" src="_images/01-symbolic-math_8_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -472,19 +500,28 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_9_0.png" src="_images/01-symbolic-math_9_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># intergration</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_10_0.png" src="_images/01-symbolic-math_10_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># set bounds on the intergration </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_11_0.png" src="_images/01-symbolic-math_11_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -493,12 +530,18 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_12_0.png" src="_images/01-symbolic-math_12_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">expr</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_13_0.png" src="_images/01-symbolic-math_13_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -507,12 +550,18 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_14_0.png" src="_images/01-symbolic-math_14_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># series of a trig. function</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_15_0.png" src="_images/01-symbolic-math_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -521,6 +570,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_16_0.png" src="_images/01-symbolic-math_16_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -528,12 +580,18 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_17_0.png" src="_images/01-symbolic-math_17_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_18_0.png" src="_images/01-symbolic-math_18_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -545,14 +603,14 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">oo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">oo</span> <span class="c1"># oo represents infinity</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Sum</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Sum</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span> <span class="c1"># summation</span>
 </pre></div>
 </div>
 </div>
@@ -562,6 +620,9 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_22_0.png" src="_images/01-symbolic-math_22_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -584,6 +645,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_25_0.png" src="_images/01-symbolic-math_25_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -591,12 +655,19 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/01-symbolic-math_26_0.png" src="_images/01-symbolic-math_26_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1\\2\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -619,10 +690,16 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2],
+       [3, 4]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># use Numpy and SymPy to create a 2D matrix</span>
 </pre></div>
 </div>
 </div>
@@ -633,10 +710,19 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 2\\3 &amp; 4\end{matrix}\right]\end{split}\]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sympy.matrices.dense.MutableDenseMatrix
 </pre></div>
 </div>
 </div>
@@ -670,17 +756,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="03-pandas.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="stock-report.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Basic info</p>
+            <p class="prev-next-title">Example:  Grabbing Time Series Data from a Public API (here Yahoo finance)</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02-fitting-and-interpolating.html" title="next page">
+    <a class='right-next' id="next-link" href="ODE-symbolicmath.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Our familiar example from previous weeks</p>
+        <p class="prev-next-title">Ex. Solving an ODE with Symbolic Math</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -691,7 +777,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By The Jupyter Book Community<br/>
+    By Benjamin Winjum<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

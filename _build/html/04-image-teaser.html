@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>And now for something completely different &#8212; Numerical Programming with Python Part 1, 2 &amp; 3</title>
+    <title>Image Processing &#8212; Numerical Programming with Python</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,9 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Harmonic oscillator" href="03-ODEs.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Numerical Programming with Python Part 1, 2 & 3</h1>
+      <h1 class="site-logo" id="site-title">Numerical Programming with Python</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -108,19 +109,24 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    Winter 2021 IDRE Numerical Programming with Python
+                    Numerical Programming with Python
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Part 1
+  Fundamentals of Python
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Start-Here.html">
-   Numerical Programming with Python, Part 1:  Python Basics
+   Python Basics with Examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python-Libraries.html">
+   Intro to Python Libraries
   </a>
  </li>
  <li class="toctree-l1">
@@ -131,17 +137,49 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Part 2
+  Symbolic Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-symbolic-math.html">
+   Symbolic Math with SymPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ODE-symbolicmath.html">
+   Ex. Solving ODEs with Symbolic Math
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Numerical Modeling
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-numpy-scipy.html">
-   Numerical Programming with Python, Part 2:
-   <a class="tocSkip">
-   </a>
+   Numpy and SciPy
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-fitting-and-interpolating.html">
+   Fitting and Interpolating
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ODE-numericalmodeling.html">
+   Ex. Solving ODEs with Numerical Modeling
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Visualization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02-matplotlib.html">
    Matplotlib
@@ -149,34 +187,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03-pandas.html">
-   Basic info
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Part 3
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01-symbolic-math.html">
-   Numerical Modeling
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-fitting-and-interpolating.html">
-   Our familiar example from previous weeks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-ODEs.html">
-   Harmonic oscillator
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Unknown
+   Pandas
   </a>
  </li>
 </ul>
@@ -393,7 +404,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>And now for something completely different <a class="tocSkip"></h1>
+                <h1>Image Processing <a class="tocSkip"></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -405,8 +416,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="and-now-for-something-completely-different-a-class-tocskip">
-<h1>And now for something completely different <a class="tocSkip"><a class="headerlink" href="#and-now-for-something-completely-different-a-class-tocskip" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="image-processing-a-class-tocskip">
+<h1>Image Processing <a class="tocSkip"><a class="headerlink" href="#image-processing-a-class-tocskip" title="Permalink to this headline">#</a></h1>
 <p>There are many, many more topics to pursue.  Good places to continue learning:</p>
 <ul class="simple">
 <li><p>The SciPy Lecture Notes: <a class="reference external" href="https://scipy-lectures.org/">https://scipy-lectures.org/</a></p></li>
@@ -415,7 +426,7 @@ title="Print to PDF"
 </ul>
 <p>The following is a brief teaser for Image Processing</p>
 <section id="feature-extraction-edge-detection">
-<h2>Feature extraction (edge detection)<a class="headerlink" href="#feature-extraction-edge-detection" title="Permalink to this headline">#</a></h2>
+<h2>Feature Extraction (edge detection)<a class="headerlink" href="#feature-extraction-edge-detection" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -464,6 +475,9 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/04-image-teaser_2_0.png" src="_images/04-image-teaser_2_0.png" />
 </div>
 </div>
 </section>
@@ -519,10 +533,21 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qk/hv87dc8s27d5rgnhn23fklgh0000gn/T/ipykernel_27742/2974393435.py:10: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  im[(points[0]).astype(np.int), (points[1]).astype(np.int)] = 1
+/var/folders/qk/hv87dc8s27d5rgnhn23fklgh0000gn/T/ipykernel_27742/2974393435.py:13: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  mask = (im &gt; im.mean()).astype(np.float)
+</pre></div>
+</div>
+<img alt="_images/04-image-teaser_4_1.png" src="_images/04-image-teaser_4_1.png" />
+</div>
 </div>
 </section>
 <section id="spectral-clustering-using-advanced-libraries-such-as-scikit-learn">
-<h2>Spectral clustering (using advanced libraries such as scikit-learn)<a class="headerlink" href="#spectral-clustering-using-advanced-libraries-such-as-scikit-learn" title="Permalink to this headline">#</a></h2>
+<h2>Spectral Clustering (using advanced libraries such as scikit-learn)<a class="headerlink" href="#spectral-clustering-using-advanced-libraries-such-as-scikit-learn" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -560,10 +585,20 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100, 100)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circle2</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100, 100)
 </pre></div>
 </div>
 </div>
@@ -603,6 +638,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/04-image-teaser_10_0.png" src="_images/04-image-teaser_10_0.png" />
+</div>
 </div>
 </section>
 </section>
@@ -634,13 +672,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="03-ODEs.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Harmonic oscillator</p>
-        </div>
-    </a>
 </div>
             </footer>
         </div>
@@ -648,7 +679,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By The Jupyter Book Community<br/>
+    By Benjamin Winjum<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

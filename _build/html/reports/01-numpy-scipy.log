@@ -22,7 +22,7 @@ a2.reshape((3,4))
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mValueError[0m                                Traceback (most recent call last)
-Input [0;32mIn [56][0m, in [0;36m<cell line: 1>[0;34m()[0m
+Input [0;32mIn [51][0m, in [0;36m<cell line: 1>[0;34m()[0m
 [0;32m----> 1[0m [43ma2[49m[38;5;241;43m.[39;49m[43mreshape[49m[43m([49m[43m([49m[38;5;241;43m3[39;49m[43m,[49m[38;5;241;43m4[39;49m[43m)[49m[43m)[49m
 
 [0;31mValueError[0m: cannot reshape array of size 10 into shape (3,4)

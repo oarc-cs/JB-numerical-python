@@ -1,205 +1,209 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Numerical Computing with Python, Part 3:   Numerical Modeling  <a class="tocSkip">
-#     
-# To start, let's do a bit of symbolic math to get the gears churning...
+# # Symbolic Math with SymPy  <a class="tocSkip">
 
-# In[ ]:
+# In[1]:
 
 
 import sympy
 sympy.init_printing()
 
 
-# In[ ]:
+# In[2]:
 
 
-x = sympy.Symbol('x')
+x = sympy.Symbol('x') # makes x a symbol to interact with rather than a python variable
 
 
-# In[ ]:
+# In[3]:
 
 
 x
 
 
-# In[ ]:
+# In[4]:
 
 
 x**2
 
 
-# In[ ]:
+# In[5]:
 
 
 expr = x**4 + x**3 + x**2 + x + 1
 
 
-# In[ ]:
+# In[6]:
 
 
 expr
 
 
-# In[ ]:
+# In[7]:
 
 
-expr.diff(x)
+expr.diff(x) # differentiate
 
 
-# In[ ]:
+# In[8]:
 
 
-expr.diff(x,3)
+expr.diff(x,3) # finds the 3rd order derivative
 
 
-# In[ ]:
+# In[9]:
 
 
 expr.diff(x,3).expand()
 
 
-# In[ ]:
+# In[10]:
 
 
-expr.integrate(x)
+expr.integrate(x) # intergration
 
 
-# In[ ]:
+# In[11]:
 
 
-expr.integrate((x,0,3))
+expr.integrate((x,0,3)) # set bounds on the intergration 
 
 
-# In[ ]:
+# In[12]:
 
 
 sympy.integrate(expr,x)
 
 
-# In[ ]:
+# In[13]:
 
 
 sympy.integrate(expr,(x,0,3))
 
 
-# In[ ]:
+# In[14]:
 
 
 sympy.cos(x)
 
 
-# In[ ]:
+# In[15]:
 
 
-sympy.cos(x).series(x,n=10)
+sympy.cos(x).series(x,n=10) # series of a trig. function
 
 
-# In[ ]:
+# In[16]:
 
 
 sympy.cos(x).integrate(x)
 
 
-# In[ ]:
+# In[17]:
 
 
 sympy.tan(x)
 
 
-# In[ ]:
+# In[18]:
 
 
 sympy.tan(x).integrate(x)
 
 
-# In[ ]:
+# In[19]:
 
 
 n = sympy.symbols("n")
 
 
-# In[ ]:
+# In[20]:
 
 
-from sympy import oo
+from sympy import oo # oo represents infinity
 
 
-# In[ ]:
+# In[21]:
 
 
-x = sympy.Sum(1/(n**2), (n, 1, oo))
+x = sympy.Sum(1/(n**2), (n, 1, oo)) # summation
 
 
-# In[ ]:
+# In[22]:
 
 
 x
 
 
-# In[ ]:
+# In[23]:
 
 
 x = sympy.Symbol('x')
 
 
-# In[ ]:
+# In[24]:
 
 
 a = sympy.Sum(x**n/(sympy.factorial(n)), (n, 0, oo))
 
 
-# In[ ]:
+# In[25]:
 
 
 a
 
 
-# In[ ]:
+# In[26]:
 
 
 a.doit()
 
 
-# In[ ]:
+# In[27]:
 
 
 sympy.Matrix([1,2])
 
 
-# In[ ]:
+# In[28]:
 
 
 import numpy as np
 
 
-# In[ ]:
+# In[29]:
 
 
 b = np.array([[1,2],[3,4]])
 
 
-# In[ ]:
+# In[30]:
 
 
 b
 
 
-# In[ ]:
+# In[31]:
 
 
-m = sympy.Matrix(b)
+m = sympy.Matrix(b) # use Numpy and SymPy to create a 2D matrix
 
 
-# In[ ]:
+# In[32]:
 
 
 m
 
 
-# In[ ]:
+# In[33]:
 
 
 type(m)
+
+
+# In[ ]:
+
+
+
 

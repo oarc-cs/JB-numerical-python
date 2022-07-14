@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Numerical Programming with Python, Part 1:  Python Basics
+# # Python Basics
 
 # ![image.png](attachment:image.png)
 
@@ -17,23 +17,26 @@
 
 # "Python is an interpreted, object-oriented, high-level programming language with dynamic semantics."
 # 
+# * A general purpose programming language
 # * Interpreted -- you don't have to compile Python code in order to run it.
 # * The simplicity and readability can increase productivity
 # * It can be very easy to learn, but it's also a powerful language with many libraries that enhance its ability to efficiently tackle a wide range of computational problems.
+# * Very well suited for interactive work and quick prototyping, while being powerful enough to write large applications in.
 
 # Another interesting tidbit -- "Python" comes from Monty Python's Flying Circus, rather than the snake.
 
-# ## Various ways to run Python code
+# ## Various Ways to Run Python code
 
 # * Interactively at a prompt
 # * With a file that contains the code you want
 # * Inside of an interactive development environment
 
-# Let's switch over to the terminal for awhile to explore....
+# Run each cell using the live code feature, which can be found in the upper right corner
+# * each cell provides examples to further undertsand some fundamentals of Python
 
 # ## Calculating
 
-# Simple example: compound interest calculator with annual contributions
+# Example: compound interest calculator with annual contributions
 # 
 # * p = principal
 # * r = annual interest rate in percent
@@ -41,8 +44,10 @@
 # * c = annual contribution (made at the start of the year)
 # 
 # $$\text{Balance}(y) = p(1 + r)^y + c\left[\frac{(1 + r)^{y+1} - (1 + r)}{r} \right]$$
+# 
+# * a variable is denoted with a "=" sign
 
-# In[ ]:
+# In[1]:
 
 
 y1 = 1
@@ -52,7 +57,7 @@ c1 = 100
 p1*(1 + r1)**y1 + c1*( ((1 + r1)**(y1 + 1) - (1 + r1)) / r1 )
 
 
-# In[ ]:
+# In[2]:
 
 
 y2 = 45
@@ -64,19 +69,23 @@ p2*(1 + r2)**y2 + c2*( ((1 + r2)**(y2 + 1) - (1 + r2)) / r2 )
 
 # ## Strings
 
-# In[ ]:
+# A string is a sequence of characters surrounded by quote marks
+
+# In[3]:
 
 
 parrotreturn = "This parrot is no more! It has ceased to be!"
 
 
-# In[ ]:
+# Index elements of the string with brackets 
+
+# In[4]:
 
 
 parrotreturn[1]
 
 
-# In[ ]:
+# In[5]:
 
 
 parrotreturn[0]
@@ -84,13 +93,13 @@ parrotreturn[0]
 
 # Do note:  Python numbering starts at 0, not 1
 
-# In[ ]:
+# In[6]:
 
 
 parrotreturn[0:3]
 
 
-# In[ ]:
+# In[7]:
 
 
 parrotreturn[0:4]
@@ -98,57 +107,58 @@ parrotreturn[0:4]
 
 # Slicing includes the first number but not the last
 
-# In[ ]:
+# In[8]:
 
 
 parrotreturn.index('!')
 
 
 # What exactly is ".index"? -- index is a *method* and the "." notifies Python to call the method associated with parrotreturn.
+# * returns the index of the given element
 
-# In[ ]:
+# In[9]:
 
 
 # Use parrotreturn.index('!') and slicing to print out only the first sentence of the string
 
 
-# In[ ]:
+# In[10]:
 
 
 print(parrotreturn)
 
 
-# In[ ]:
+# In[11]:
 
 
 parrotreturn = '"This parrot is no more! It has ceased to be!"'
 
 
-# In[ ]:
+# In[12]:
 
 
 print(parrotreturn)
 
 
-# In[ ]:
+# In[13]:
 
 
 parrotreturn = "\"This parrot is no more! It has ceased to be!\""
 
 
-# In[ ]:
+# In[14]:
 
 
 print(parrotreturn)
 
 
-# In[ ]:
+# In[15]:
 
 
 parrotreturn = "\"This parrot is no more!\"\n\"It has ceased to be!\""
 
 
-# In[ ]:
+# In[16]:
 
 
 print(parrotreturn)
@@ -156,49 +166,49 @@ print(parrotreturn)
 
 # Strings can also be concatenated and expanded with math operators
 
-# In[ ]:
+# In[17]:
 
 
 "spam"
 
 
-# In[ ]:
+# In[18]:
 
 
 "spam"*3
 
 
-# In[ ]:
+# In[19]:
 
 
 'spam'*3 + ' and ham and eggs'
 
 
-# In[ ]:
+# In[20]:
 
 
 return3 = "It's expired and gone to meet its maker!"
 
 
-# In[ ]:
+# In[21]:
 
 
 parrotreturn + return3
 
 
-# In[ ]:
+# In[22]:
 
 
 print(parrotreturn + return3)
 
 
-# In[ ]:
+# In[23]:
 
 
 # clean up the quote so that the formatting is consistent
 
 
-# In[ ]:
+# In[24]:
 
 
 # put the entire string into one variable
@@ -207,25 +217,30 @@ print(parrotreturn + return3)
 
 # ## Lists
 
-# In[ ]:
+# A list is a collection of items which is bounded by square brackets
+
+# In[25]:
 
 
 holyhandgrenade = [1, 2, 5]
 
 
-# In[ ]:
+# Index elements of the list
+# * ex. index #2 = 5
+
+# In[26]:
 
 
 holyhandgrenade[1]
 
 
-# In[ ]:
+# In[27]:
 
 
 holyhandgrenade[0]
 
 
-# In[ ]:
+# In[28]:
 
 
 holyhandgrenade[3]
@@ -279,16 +294,12 @@ holyhandgrenade[:]
 holyhandgrenade[2]
 
 
+# Replace an element of the list at a given index
+
 # In[ ]:
 
 
 holyhandgrenade[2] = 3
-
-
-# In[ ]:
-
-
-holyhandgrenade[:]
 
 
 # In[ ]:
@@ -375,7 +386,7 @@ type(holyhandgrenade)
 # try out the "pop" method to see what it does, then try it with a value between the parentheses
 
 
-# ## Tuples, sets, and dictionaries
+# ## Tuples, Sets, and Dictionaries
 
 # ### Tuples
 
@@ -460,6 +471,8 @@ riddleanswers
 
 
 # ### Dictionary
+
+# dictionary = {'key': 'value', 'key':'value', ... }
 
 # In[ ]:
 
@@ -646,6 +659,8 @@ else:
 
 # ### While loops
 
+# The below while loop is an infinite loop
+
 # In[ ]:
 
 
@@ -676,12 +691,14 @@ while disneytrip < 10:
     disneytrip += 1
 
 
-# # For loops
+# ### For loops
 
-# In[1]:
+# A for loop is used to iterate through a specified range, list, etc. 
+
+# In[ ]:
 
 
-for disneytrip in range(10):
+for disneytrip in range(10): 
     print(str(disneytrip) + ': Are we there yet?')
 
 
@@ -903,7 +920,7 @@ annual_contribution = 6500
 f2digit(principal, rate, year, annual_contribution)
 
 
-# To follow up on this after class, you may find it interesting to check out the documentation for Python.
+# If interested check out the documentation for Python.
 # * The answers on that stackoverflow page have a link for PEP (Python Enhancement Proposal) and thereby to https://www.python.org/
 # * The page also has another link for the official documentation (https://docs.python.org/3/)
 # * You may not immediately appreciate all the points on the documentation site, but that is ok.
@@ -934,6 +951,61 @@ f2digit(principal, rate, year, annual_contribution)
 import mymodule
 
 
+# Below is the contents of mymodule
+
+# In[ ]:
+
+
+# %load 'mymodule.py'
+def compound_calculator(p,r,y,c):
+    '''
+    compound_calculator(p,r,y,c) calculates the value at year y of an investment
+    p = principal
+    r = interest rate (percent value)
+    y = year
+    c = contribution at end of each year
+    '''
+
+    r = r/100
+    return 'Final value is ${:,.2f}'.format(p*(1 + r)**y + c*( ((1 + r)**(y+1) - (1 + r)) / r ))
+
+holyhandgrenade = ['one','two','five']
+
+riddleanswers = {'name':'Lancelot', 'quest':'Holy Grail', 'favorite colour':'blue'}
+
+stocksDict = {'AAPL': 'Apple Inc.',
+ 'AMGN': 'Amgen Inc.',
+ 'AXP': 'American Express Company',
+ 'BA': 'The Boeing Company',
+ 'CAT': 'Caterpillar Inc.',
+ 'CRM': 'Salesforce',
+ 'CSCO': 'Cisco Systems, Inc.',
+ 'CVX': 'Chevron Corporation',
+ 'DIS': 'The Walt Disney Company',
+ 'DOW': 'Dow Inc.',
+ 'GS': 'The Goldman Sachs Group, Inc.',
+ 'HD': 'The Home Depot, Inc.',
+ 'HON': 'Honeywell International Inc.',
+ 'IBM': 'International Business Machines Corporation',
+ 'INTC': 'Intel Corporation',
+ 'JNJ': 'Johnson & Johnson',
+ 'JPM': 'JPMorgan Chase & Co.',
+ 'KO': 'The Coca-Cola Company',
+ 'MCD': "McDonald's Corporation",
+ 'MMM': '3M Company',
+ 'MRK': 'Merck & Co., Inc.',
+ 'MSFT': 'Microsoft Corporation',
+ 'NKE': 'NIKE, Inc.',
+ 'PG': 'The Procter & Gamble Company',
+ 'TRV': 'The Travelers Companies, Inc.',
+ 'UNH': 'UnitedHealth Group Incorporated',
+ 'V': 'Visa Inc.',
+ 'VZ': 'Verizon Communications Inc.',
+ 'WBA': 'Walgreens Boots Alliance, Inc.',
+ 'WMT': 'Walmart Inc.'}
+
+
+
 # In[ ]:
 
 
@@ -952,6 +1024,8 @@ mymodule.holyhandgrenade
 for i in range(len(mymodule.holyhandgrenade)):
     print(mymodule.holyhandgrenade[i])
 
+
+# Importing certain functions from the module with an abbreviated name
 
 # In[ ]:
 

@@ -1,30 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ![image.png](attachment:image.png)
+# # Pandas 
 
-# https://pandas.pydata.org/
-# 
-# Pandas data-manipulation capabilities are built on top of NumPy, utilizing its fast array processing, and its graphing capabilities are built on top of Matplotlib.
-# 
-# * "pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language."
-# 
-# * It may be one of the most widely used tools for data munging
-#   * present data in nice formats
-#   * multiple convenient methods for filtering data
-#   * work with a variety of data formats (CSV, Excel, …)
-#   * convenient functions for quickly plotting data
-# 
-# * Name comes from panel data, also play on python data analysis
+# ## Intro Example
 
-# In[ ]:
+# In[1]:
 
 
 import pandas as pd
 import numpy as np
 
 
-# In[ ]:
+# In[2]:
 
 
 titles = pd.Series(['And Now for Something Completely Different',
@@ -35,40 +23,41 @@ titles = pd.Series(['And Now for Something Completely Different',
           'Monty Python Live (Mostly)'])
 
 
-# In[ ]:
+# In[3]:
 
 
 titles
 
 
-# In[ ]:
+# In[4]:
 
 
 titles[0:2]
 
 
-# In[ ]:
+# In[5]:
 
 
 year = [1971,1975,1979,1982,1983,2014]
 
 
-# In[ ]:
+# In[6]:
 
 
 production_budget = ['100000', '400000', '4000000', None, '9000000', None]
 
 
-# In[ ]:
+# In[7]:
 
 
 # taken from https://www.the-numbers.com but make no claims to verifying the numbers
 box_office = [np.nan, 5028948, 20515486, 327958, 14929552, 2215461]
 
 
-# In[ ]:
+# In[8]:
 
 
+# dataframe (key: a list of values)
 df = pd.DataFrame({'Year': year,
                    'Titles': titles,
                    'Budget': production_budget,
@@ -76,146 +65,144 @@ df = pd.DataFrame({'Year': year,
 df
 
 
-# In[ ]:
+# In[9]:
 
 
 df.columns
 
 
-# In[ ]:
+# In[10]:
 
 
 df.index
 
 
-# In[ ]:
+# In[11]:
 
 
 df.dtypes
 
 
-# In[ ]:
+# In[12]:
 
 
-df['Budget']
+df['Budget'] # index dataframe with column title 
 
 
-# ## Basic info
+# ## Basic Info
 
-# In[ ]:
-
-
-df.shape
+# In[13]:
 
 
-# In[ ]:
+df.shape # (rows, columns)
+
+
+# In[14]:
 
 
 df.info()
 
 
-# ## We will come back to nulls and Dtypes
-
-# In[ ]:
+# In[15]:
 
 
-df.describe()
+df.describe() # statistics
 
 
-# In[ ]:
+# In[16]:
 
 
-df.T
+df.T #transpose 
 
 
-# In[ ]:
+# In[17]:
 
 
-df.head()
+df.head() # will print the first 5 rows of the dataframe 
 
 
-# In[ ]:
+# In[18]:
 
 
-df.tail(3)
+df.tail(3) # will print the last 3 rows of the dataframe
 
 
-# In[ ]:
+# In[19]:
 
 
-df.sort_index(axis=1, ascending=False)
+df.sort_index(axis=1, ascending=False) # sort the columns in alphabetical order
 
 
-# In[ ]:
+# In[20]:
 
 
-df.sort_index(axis=0, ascending=False)
+df.sort_index(axis=0, ascending=False) # sort the rows in numerical order
 
 
-# In[ ]:
+# In[21]:
 
 
 df.sort_values(by='Gross')
 
 
-# In[ ]:
+# In[22]:
 
 
 df.sort_values(by='Gross',ascending=False)
 
 
-# # Selecting
+# ## Selecting
 # loc, iloc, at, iat
 
-# In[ ]:
+# In[23]:
 
 
 df['Titles']
 
 
-# In[ ]:
+# In[24]:
 
 
 df[0:3]
 
 
-# In[ ]:
+# In[25]:
 
 
 df.loc[1]
 
 
-# In[ ]:
+# In[26]:
 
 
 df.loc[1,['Titles','Year']]
 
 
-# In[ ]:
+# In[27]:
 
 
 df.loc[0:2,['Titles','Year']]
 
 
-# In[ ]:
+# In[28]:
 
 
 df.loc[1,'Titles']
 
 
-# In[ ]:
+# In[29]:
 
 
 df.at[1,'Titles']
 
 
-# In[ ]:
+# In[30]:
 
 
-df.iloc[1]
+df.iloc[1] # iloc is used when referencing numerical indexes  
 
 
-# In[ ]:
+# In[31]:
 
 
 df.iloc[1,'Titles']
@@ -239,7 +226,7 @@ df.iloc[0:2,:]
 df.iat[1,1]
 
 
-# # Boolean indexing
+# ## Boolean Indexing
 
 # In[ ]:
 
@@ -297,7 +284,7 @@ df['Budget'] > 1000000
 df[df['Budget'] > 1000000]
 
 
-# # Missing data
+# ## Missing Data
 
 # In[ ]:
 
@@ -471,7 +458,7 @@ df.plot(x='Year',y='Gross')
 df.plot(x='Year',y='Gross',kind='scatter')
 
 
-# # Calculating values and aggregating
+# ## Calculating Values and Aggregating
 
 # In[ ]:
 
@@ -523,7 +510,8 @@ df4group.groupby('python skills').count()
 df4group.groupby('python skills')['monty python knowledge'].mean()
 
 
-# # Final fun - estimating $\pi$ (again)
+# ## Example: Estimating $\pi$ (again)
+# Using dataframes instead of NumPy arrays 
 
 # ![image.png](attachment:image.png)
 
@@ -632,6 +620,6 @@ testpi = pi_estimate(100)
 testpi
 
 
-# # References
+# ### References
 # * https://pandas.pydata.org/pandas-docs/stable/user_guide/
 # * https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html

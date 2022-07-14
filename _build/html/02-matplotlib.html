@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Matplotlib &#8212; Numerical Programming with Python Part 1, 2 &amp; 3</title>
+    <title>Matplotlib &#8212; Numerical Programming with Python</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,10 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Basic info" href="03-pandas.html" />
-    <link rel="prev" title="Numerical Programming with Python, Part 2:" href="01-numpy-scipy.html" />
+    <link rel="next" title="Pandas" href="03-pandas.html" />
+    <link rel="prev" title="Ex. Solving an ODE with Numerical Modeling" href="ODE-numericalmodeling2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -97,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Numerical Programming with Python Part 1, 2 & 3</h1>
+      <h1 class="site-logo" id="site-title">Numerical Programming with Python</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -109,19 +111,24 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    Winter 2021 IDRE Numerical Programming with Python
+                    Numerical Programming with Python
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Part 1
+  Fundamentals of Python
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Start-Here.html">
-   Numerical Programming with Python, Part 1:  Python Basics
+  <a class="reference internal" href="01-Python-Fundamentals.html">
+   Python Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python-Libraries.html">
+   Intro to Python Libraries
   </a>
  </li>
  <li class="toctree-l1">
@@ -132,17 +139,49 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Part 2
+  Symbolic Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-symbolic-math.html">
+   Symbolic Math with SymPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ODE-symbolicmath.html">
+   Ex. Solving ODEs with Symbolic Math
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Numerical Modeling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-numpy-scipy.html">
+   Numpy and SciPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-fitting-and-interpolating.html">
+   Fitting and Interpolating
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ODE-numericalmodeling2.html">
+   Ex. Solving ODEs with Numerical Modeling
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Visualization
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01-numpy-scipy.html">
-   Numerical Programming with Python, Part 2:
-   <a class="tocSkip">
-   </a>
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Matplotlib
@@ -150,34 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03-pandas.html">
-   Basic info
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Part 3
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01-symbolic-math.html">
-   Numerical Modeling
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-fitting-and-interpolating.html">
-   Our familiar example from previous weeks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-ODEs.html">
-   Harmonic oscillator
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-image-teaser.html">
-   Unknown
+   Pandas
   </a>
  </li>
 </ul>
@@ -382,12 +394,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphing">
+   Graphing
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -399,6 +435,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphing">
+   Graphing
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -408,22 +457,10 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="matplotlib">
 <h1>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h1>
-<p><a class="reference external" href="https://matplotlib.org/">https://matplotlib.org/</a></p>
-<ul class="simple">
-<li><p>“Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python.”</p></li>
-<li><p>“Matplotlib makes easy things easy and hard things possible.”</p></li>
-<li><p>Matplotlib was built on the NumPy and SciPy frameworks and initially made to enable interactive Matlab-like plotting via gnuplot from iPython</p></li>
-<li><p>Gained early traction with support from the Space Telescope Institute and JPL</p></li>
-<li><p>Easily one of the go-to libraries for academic publishing needs</p>
-<ul>
-<li><p>Create publication-ready graphics in a range of formats</p></li>
-<li><p>Powerful options to customize all aspects of a figure</p></li>
-</ul>
-</li>
-<li><p>Matplotlib underlies the plotting capabilities of other libraries such as Pandas, Seaborn, and plotnine</p></li>
-</ul>
 <p><img alt="image.png" src="attachment:image.png" />
 Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/3.1.1/gallery/showcase/anatomy.html">https://matplotlib.org/3.1.1/gallery/showcase/anatomy.html</a></p>
+<section id="graphing">
+<h2>Graphing<a class="headerlink" href="#graphing" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -441,6 +478,9 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/02-matplotlib_4_0.png" src="_images/02-matplotlib_4_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -449,6 +489,9 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02-matplotlib_5_0.png" src="_images/02-matplotlib_5_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -461,6 +504,9 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/02-matplotlib_6_0.png" src="_images/02-matplotlib_6_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -472,6 +518,9 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02-matplotlib_7_0.png" src="_images/02-matplotlib_7_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -486,6 +535,9 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/02-matplotlib_8_0.png" src="_images/02-matplotlib_8_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -493,6 +545,9 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02-matplotlib_9_0.png" src="_images/02-matplotlib_9_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -502,6 +557,9 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02-matplotlib_10_0.png" src="_images/02-matplotlib_10_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -514,6 +572,9 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02-matplotlib_11_0.png" src="_images/02-matplotlib_11_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -534,6 +595,9 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02-matplotlib_12_0.png" src="_images/02-matplotlib_12_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -556,6 +620,9 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02-matplotlib_13_0.png" src="_images/02-matplotlib_13_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -597,6 +664,9 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/02-matplotlib_14_0.png" src="_images/02-matplotlib_14_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -614,6 +684,9 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02-matplotlib_15_0.png" src="_images/02-matplotlib_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -637,6 +710,13 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qk/hv87dc8s27d5rgnhn23fklgh0000gn/T/ipykernel_30168/1297678667.py:5: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = fig.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="_images/02-matplotlib_16_1.png" src="_images/02-matplotlib_16_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -667,6 +747,13 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qk/hv87dc8s27d5rgnhn23fklgh0000gn/T/ipykernel_30168/547207051.py:6: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = fig.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="_images/02-matplotlib_17_1.png" src="_images/02-matplotlib_17_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -706,7 +793,15 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qk/hv87dc8s27d5rgnhn23fklgh0000gn/T/ipykernel_30168/3555600703.py:11: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = fig.gca(projection=&#39;3d&#39;)
+</pre></div>
 </div>
+<img alt="_images/02-matplotlib_18_1.png" src="_images/02-matplotlib_18_1.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -736,17 +831,17 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01-numpy-scipy.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="ODE-numericalmodeling2.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Numerical Programming with Python, Part 2:   <a class="tocSkip"></p>
+            <p class="prev-next-title">Ex. Solving an ODE with Numerical Modeling</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="03-pandas.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Basic info</p>
+        <p class="prev-next-title">Pandas</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -757,7 +852,7 @@ Anatomy of a Figure, <a class="reference external" href="https://matplotlib.org/
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By The Jupyter Book Community<br/>
+    By Benjamin Winjum<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

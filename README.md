@@ -1,5 +1,8 @@
 # Numerical Programming with Python 
 
+Python has a collection of libraries which gives users multiple ways to solve a given problem. The symbolic method uses symbolic manipulation with software to get an analytical answer and the numerical method uses approximate methods to estimate the solution without producing an analytical answer. In this interactive book you are introduced to examples which show the appropriate functions and libraries to use for each method. 
+
+
 This repository is maintained by Ben Winjum for use in UCLA IDRE's introductory training class.
 
 ## Interacting with JupyterHub for class
