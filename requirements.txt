@@ -6,3 +6,4 @@ pandas
 imageio
 sklearn
 sympy
+yahoo_fin
