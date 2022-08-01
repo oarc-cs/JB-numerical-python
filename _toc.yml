@@ -15,7 +15,7 @@ parts:
     title: Ex. Grabbing Time Series Data From a Public API
 - caption: Data Visualization
   chapters:
-  - file: 02-matplotlib
+  - file: Matplotlib
     title: Matplotlib
   - file: 03-pandas
     title: Pandas
