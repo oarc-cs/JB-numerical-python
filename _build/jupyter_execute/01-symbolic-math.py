@@ -10,10 +10,12 @@ import sympy
 sympy.init_printing()
 
 
+# Makes x a symbol to interact with rather than a pyhon variable
+
 # In[2]:
 
 
-x = sympy.Symbol('x') # makes x a symbol to interact with rather than a python variable
+x = sympy.Symbol('x') 
 
 
 # In[3]:
@@ -40,16 +42,20 @@ expr = x**4 + x**3 + x**2 + x + 1
 expr
 
 
+# Finds the derivative of given expression 
+
 # In[7]:
 
 
-expr.diff(x) # differentiate
+expr.diff(x) 
 
+
+# Find the 3rd order derivative
 
 # In[8]:
 
 
-expr.diff(x,3) # finds the 3rd order derivative
+expr.diff(x,3) 
 
 
 # In[9]:
@@ -58,16 +64,20 @@ expr.diff(x,3) # finds the 3rd order derivative
 expr.diff(x,3).expand()
 
 
+# Finds integral of the given expression
+
 # In[10]:
 
 
-expr.integrate(x) # intergration
+expr.integrate(x)
 
+
+# Sets bounds on the integral
 
 # In[11]:
 
 
-expr.integrate((x,0,3)) # set bounds on the intergration 
+expr.integrate((x,0,3))  
 
 
 # In[12]:
@@ -124,10 +134,12 @@ n = sympy.symbols("n")
 from sympy import oo # oo represents infinity
 
 
+# Creates summation of a given equation 
+
 # In[21]:
 
 
-x = sympy.Sum(1/(n**2), (n, 1, oo)) # summation
+x = sympy.Sum(1/(n**2), (n, 1, oo)) 
 
 
 # In[22]:

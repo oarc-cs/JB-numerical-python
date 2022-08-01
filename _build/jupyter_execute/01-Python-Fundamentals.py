@@ -271,33 +271,6 @@ print(str1 + str2)
 print(str1 * 3)
 
 
-# <div class="alert alert-info">
-# 
-# <b>Your turn:</b>
-# 
-# 1. Make a list, a dictionary, and a string, each with 5+ elements
-# 2. Retrieve elements from these variables using the appropriate indexing.
-# 
-# </div>
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
 # ## Flow control
 
 # ### If/else statements
@@ -348,12 +321,6 @@ print("I am outside the body of if")
 
 # Boolean combinations:  You can evaluate more than one True/False condition in the statements by combining conditions with `and`, `or`, and `not`
 
-# <div class="alert alert-info">
-# 
-# <b>Your turn:</b> Try assigning different values to `claim` below and re-executing the cell several times to make sure you can follow the logic of the resulting print statement.  Intersperse other conditions as well as boolean combinations.
-#     
-# </div>
-
 # In[22]:
 
 
@@ -400,18 +367,6 @@ print("The sum is", sum) # Output: The sum is 20
 
 for disneytrip in range(10):
     print(str(disneytrip) + ': Are we there yet?')
-
-
-# <div class="alert alert-info">
-# 
-# <b>Your turn:</b> Create a for loop that prints the sequence 1, 2, 5
-#     
-# </div>
-
-# In[ ]:
-
-
-
 
 
 # ## Functions
@@ -507,27 +462,6 @@ principal = 1000
 rate = 5
 annual_contribution = 6500
 f2digit(principal, rate, year, annual_contribution)
-
-
-# <div class="alert alert-info">
-# 
-# <b>Your turn:</b>
-# 
-# 1. Write your own function definition
-# 2. Call your function several times to make sure it works
-#     
-# </div>
-
-# In[ ]:
-
-
-# Enter your code for #1 here:
-
-
-# In[ ]:
-
-
-# Enter your code for #2 here:
 
 
 # ## Methods

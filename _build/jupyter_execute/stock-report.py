@@ -18,7 +18,7 @@ import ipywidgets
 
 # [First one must know how to access and use the API... I'll ignore that]
 
-# In[ ]:
+# In[2]:
 
 
 # Getting the actual company name from a ticker symbol
@@ -30,7 +30,7 @@ def get_symbol(symbol):
             return x['name']
 
 
-# In[ ]:
+# In[3]:
 
 
 print(get_symbol('AAPL'))

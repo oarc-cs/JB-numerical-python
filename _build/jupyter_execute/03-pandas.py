@@ -23,10 +23,18 @@ titles = pd.Series(['And Now for Something Completely Different',
           'Monty Python Live (Mostly)'])
 
 
+# Create a list of titles into rows, with indexes 
+
 # In[3]:
 
 
 titles
+
+
+# In[4]:
+
+
+Index titles 
 
 
 # In[4]:
@@ -54,6 +62,8 @@ production_budget = ['100000', '400000', '4000000', None, '9000000', None]
 box_office = [np.nan, 5028948, 20515486, 327958, 14929552, 2215461]
 
 
+# Create a table
+
 # In[8]:
 
 
@@ -65,25 +75,25 @@ df = pd.DataFrame({'Year': year,
 df
 
 
-# In[9]:
+# In[15]:
 
 
 df.columns
 
 
-# In[10]:
+# In[16]:
 
 
 df.index
 
 
-# In[11]:
+# In[17]:
 
 
 df.dtypes
 
 
-# In[12]:
+# In[18]:
 
 
 df['Budget'] # index dataframe with column title 
@@ -91,61 +101,61 @@ df['Budget'] # index dataframe with column title
 
 # ## Basic Info
 
-# In[13]:
+# In[19]:
 
 
 df.shape # (rows, columns)
 
 
-# In[14]:
+# In[20]:
 
 
 df.info()
 
 
-# In[15]:
+# In[21]:
 
 
 df.describe() # statistics
 
 
-# In[16]:
+# In[ ]:
 
 
 df.T #transpose 
 
 
-# In[17]:
+# In[ ]:
 
 
 df.head() # will print the first 5 rows of the dataframe 
 
 
-# In[18]:
+# In[ ]:
 
 
 df.tail(3) # will print the last 3 rows of the dataframe
 
 
-# In[19]:
+# In[ ]:
 
 
 df.sort_index(axis=1, ascending=False) # sort the columns in alphabetical order
 
 
-# In[20]:
+# In[ ]:
 
 
 df.sort_index(axis=0, ascending=False) # sort the rows in numerical order
 
 
-# In[21]:
+# In[ ]:
 
 
 df.sort_values(by='Gross')
 
 
-# In[22]:
+# In[ ]:
 
 
 df.sort_values(by='Gross',ascending=False)
@@ -154,55 +164,55 @@ df.sort_values(by='Gross',ascending=False)
 # ## Selecting
 # loc, iloc, at, iat
 
-# In[23]:
+# In[ ]:
 
 
 df['Titles']
 
 
-# In[24]:
+# In[ ]:
 
 
 df[0:3]
 
 
-# In[25]:
+# In[22]:
 
 
 df.loc[1]
 
 
-# In[26]:
+# In[ ]:
 
 
 df.loc[1,['Titles','Year']]
 
 
-# In[27]:
+# In[ ]:
 
 
 df.loc[0:2,['Titles','Year']]
 
 
-# In[28]:
+# In[ ]:
 
 
 df.loc[1,'Titles']
 
 
-# In[29]:
+# In[ ]:
 
 
 df.at[1,'Titles']
 
 
-# In[30]:
+# In[ ]:
 
 
 df.iloc[1] # iloc is used when referencing numerical indexes  
 
 
-# In[31]:
+# In[ ]:
 
 
 df.iloc[1,'Titles']

@@ -5,6 +5,19 @@
 
 # Python libraries give users access to modules that can perform certain functions without the user having to write their own code.
 
+# ## Numpy
+
+# https://numpy.org/
+# 
+# NumPy is the fundamental package for numerical computation. It defines the numerical array and matrix types and basic operations on them.
+# 
+# There is a wide range of mathematical functionality provided in the numpy library (See for example https://numpy.org/doc/stable/reference/routines.html)
+# 
+# Some of key submodules include:
+# * numpy.linalg - linear algebra
+# * numpy.fft - Fourier transforms
+# * numpy.random - random sampling and various distributions
+
 # ## SciPy 
 
 # The “SciPy ecosystem” of scientific computing in Python builds upon a small core of packages: https://www.scipy.org/about.html
@@ -30,19 +43,6 @@
 #   * *scipy.spatial* - Spatial data structures and algorithms
 #   * *scipy.special* - Any special mathematical functions
 #   * *scipy.stats* - Statistics
-
-# ## NumPy
-
-# https://numpy.org/
-# 
-# NumPy is the fundamental package for numerical computation. It defines the numerical array and matrix types and basic operations on them.
-# 
-# There is a wide range of mathematical functionality provided in the numpy library (See for example https://numpy.org/doc/stable/reference/routines.html)
-# 
-# Some of key submodules include:
-# * numpy.linalg - linear algebra
-# * numpy.fft - Fourier transforms
-# * numpy.random - random sampling and various distributions
 
 # ## Matplotlib
 

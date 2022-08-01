@@ -3,7 +3,9 @@
 
 # # NumPy and SciPy 
 
-# ## Using NumPy to Look at Series of Data
+# ## Numpy
+
+# ### Using NumPy to Look at Series of Data
 
 # In[1]:
 
@@ -93,103 +95,58 @@ balancenp = benpy.compound_calculator(p,ratesnp,y,c)
 balancenp
 
 
-# ### We're going to use a bit of ipython "magics" to look at timings.... this won't work in scripts, but works well here in the Jupyter notebook
-# * %%timeit times everything in the given cell
-
-# In[11]:
-
-
-get_ipython().run_cell_magic('timeit', '', 'balance = []\nfor i in rates:\n    r = i\n    balance.append(benpy.compound_calculator(p,r,y,c))')
-
-
-# In[12]:
-
-
-get_ipython().run_cell_magic('timeit', '', 'balancenp = benpy.compound_calculator(p,ratesnp,y,c)')
-
-
-# In[13]:
-
-
-ratesnp = np.arange(1,11)
-
-
-# In[14]:
-
-
-ratesnp
-
-
-# In[15]:
-
-
-get_ipython().run_cell_magic('timeit', '', 'balance = []\nfor i in range(1,10000):\n    r = i\n    balance.append(benpy.compound_calculator(p,r,y,c))')
-
-
-# In[16]:
-
-
-get_ipython().run_cell_magic('timeit', '', 'ratesnp = np.arange(1,10000)\nbalancenp = benpy.compound_calculator(p,ratesnp,y,c)')
-
-
 # ### Basic Operations with N-dimensional Arrays
 
-# In[17]:
-
-
-ratesnp
-
-
-# In[18]:
+# In[11]:
 
 
 a = np.array([[1,2],[3,4]])
 b = np.array([[-4,-3],[-2,-1]])
 
 
-# In[19]:
+# In[12]:
 
 
 a
 
 
-# In[20]:
+# In[13]:
 
 
 b
 
 
-# In[21]:
+# In[14]:
 
 
 a+b
 
 
-# In[22]:
+# In[15]:
 
 
 a-b
 
 
-# In[23]:
+# In[16]:
 
 
 a/b
 
 
-# In[24]:
+# In[17]:
 
 
 a*b
 
 
-# In[25]:
+# In[18]:
 
 
 np.matmul(a,b) # matrix multiplication
 
 
-# In[26]:
+# In[19]:
 
 
 # array attributes
@@ -199,120 +156,120 @@ print(a.size)
 print(a.dtype)
 
 
-# In[27]:
+# In[20]:
 
 
 a.T
 
 
-# #### Indexing and Slicing
+# ### Indexing and Slicing
 
-# In[28]:
+# In[21]:
 
 
 a[0]
 
 
-# In[29]:
+# In[22]:
 
 
 a[0:2]
 
 
-# In[30]:
+# In[23]:
 
 
 a[1:4]
 
 
-# In[31]:
+# In[24]:
 
 
 a[2:4]
 
 
-# In[32]:
+# In[25]:
 
 
 a
 
 
-# In[33]:
+# In[26]:
 
 
 a[0:1,0]
 
 
-# In[34]:
+# In[27]:
 
 
 a[:,0]
 
 
-# In[35]:
+# In[28]:
 
 
 a[1,:]
 
 
-# In[36]:
+# In[29]:
 
 
 a > 2
 
 
-# In[37]:
+# In[30]:
 
 
 a[a > 2] #returns all elements that are greater than 2
 
 
-# In[38]:
+# In[31]:
 
 
 a[a % 2 == 0]
 
 
-# #### Creating Some Arrays
+# ### Creating Some Arrays
 
-# In[39]:
+# In[32]:
 
 
 np.arange(10)
 
 
-# In[40]:
+# In[33]:
 
 
 np.arange(1,11,0.5)
 
 
-# In[41]:
+# In[34]:
 
 
 np.arange(-1,1,0.2)
 
 
-# In[42]:
+# In[35]:
 
 
 np.linspace(-1,1,11)
 
 
-# In[43]:
+# In[36]:
 
 
 np.linspace(0,2*np.pi,100)
 
 
-# In[44]:
+# In[37]:
 
 
 x = np.linspace(0,2*np.pi,100)
 y = np.cos(x)
 
 
-# In[45]:
+# In[38]:
 
 
 y
@@ -320,13 +277,13 @@ y
 
 # Let's plot for fun (cosine plot).... briefly use matplotlib
 
-# In[46]:
+# In[39]:
 
 
 import matplotlib.pyplot as plt
 
 
-# In[47]:
+# In[40]:
 
 
 plt.plot(x,y,'ro')
@@ -334,25 +291,25 @@ plt.plot(x,y,'ro')
 
 # Reshape Arrays
 
-# In[48]:
+# In[41]:
 
 
 a2 = np.arange(10).reshape((2,5)) 
 
 
-# In[49]:
+# In[42]:
 
 
 a2
 
 
-# In[50]:
+# In[43]:
 
 
 a2.reshape(10) 
 
 
-# In[51]:
+# In[44]:
 
 
 a2.reshape((3,4))
@@ -637,85 +594,4 @@ ycub = cubic_interp(xcub)
 
 plt.plot(x,y,'ro')
 plt.plot(xcub,ycub,'b-')
-
-
-# ### Images
-
-# In[54]:
-
-
-import imageio
-from scipy import misc
-from scipy import ndimage
-import numpy as np
-
-
-# In[55]:
-
-
-parrot = imageio.imread('parrot.jpeg')
-
-
-# In[56]:
-
-
-plt.imshow(parrot)
-
-
-# In[57]:
-
-
-noisy_parrot = np.copy(parrot).astype(np.float)
-noisy_parrot += parrot.std() * 0.1 * np.random.standard_normal(parrot.shape)
-# noisy_parrot = ndimage.gaussian_filter(parrot, sigma=5)
-
-
-# In[58]:
-
-
-plt.imshow(noisy_parrot.astype('uint8'))
-
-
-# In[59]:
-
-
-noisy_parrot.shape
-
-
-# In[60]:
-
-
-plt.imshow(noisy_parrot[400:,500:,].astype('uint8')) # zoom in
-
-
-# In[65]:
-
-
-median_parrot = ndimage.median_filter(noisy_parrot, size=5)
-
-
-# In[62]:
-
-
-plt.imshow(median_parrot[400:,500:,].astype('uint8'))
-
-
-# In[63]:
-
-
-rotated_parrot = ndimage.rotate(noisy_parrot, -90)
-
-
-# In[64]:
-
-
-plt.imshow(rotated_parrot[500:,:400,].astype('uint8')) # rotate image
-
-
-# <img src="parrot.jpeg” alt="parrot” width="200">
-
-# In[ ]:
-
-
-
 

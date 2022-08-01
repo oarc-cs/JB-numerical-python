@@ -21,7 +21,7 @@
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -37,7 +37,7 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Python Basics" href="01-Python-Fundamentals.html" />
@@ -141,7 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="02-matplotlib.html">
+  <a class="reference internal" href="Matplotlib.html">
    Matplotlib
   </a>
  </li>
@@ -262,7 +264,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/abigailmori/JB-numerical-python"
+        <a href="https://github.com/oarc-cs/JB-numerical-python"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -279,7 +281,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/abigailmori/JB-numerical-python/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/oarc-cs/JB-numerical-python/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -407,7 +409,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-programming-with-python">
 <h1>Numerical Programming with Python<a class="headerlink" href="#numerical-programming-with-python" title="Permalink to this headline">#</a></h1>
-<p>Python has a collection of libraries which gives users multiple ways to solve a given problem. The symbolic method uses symbolic manipulation with software to get an analytical answer and the numerical method uses approximate methods to estimate the solution without producing an analytical answer. In this interactive book you are introduced to examples which show the appropriate functions and libraries to use for each method.</p>
+<p>Python has a collection of libraries which gives users multiple ways to solve a given problem. The symbolic method uses symbolic manipulation with software to get an analytical answer and the numerical method uses approximate methods to estimate the solution without producing an analytical answer. In this interactive book you are introduced to examples which show the appropriate functions and libraries to use for each method. In this interactive book you will be able to look at examples, and the different methods you can use to analyze and solve them.</p>
 <p>This repository is maintained by Ben Winjum for use in UCLA IDRE’s introductory training class.</p>
 <section id="interacting-with-jupyterhub-for-class">
 <h2>Interacting with JupyterHub for class<a class="headerlink" href="#interacting-with-jupyterhub-for-class" title="Permalink to this headline">#</a></h2>
@@ -439,7 +441,7 @@ title="Print to PDF"
     {
         requestKernel: true,
         binderOptions: {
-            repo: "abigailmori/JB-numerical-python",
+            repo: "oarc-cs/JB-numerical-python",
             ref: "main",
         },
         codeMirrorConfig: {

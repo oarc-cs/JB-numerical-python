@@ -21,7 +21,7 @@
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -37,7 +37,7 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -144,7 +146,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="02-matplotlib.html">
+  <a class="reference internal" href="Matplotlib.html">
    Matplotlib
   </a>
  </li>
@@ -251,7 +253,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/abigailmori/JB-numerical-python/main?urlpath=tree/01-Python-Fundamentals.ipynb"
+        <a href="https://mybinder.org/v2/gh/oarc-cs/JB-numerical-python/main?urlpath=tree/01-Python-Fundamentals.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -312,7 +314,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/abigailmori/JB-numerical-python"
+        <a href="https://github.com/oarc-cs/JB-numerical-python"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -329,7 +331,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/abigailmori/JB-numerical-python/issues/new?title=Issue%20on%20page%20%2F01-Python-Fundamentals.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/oarc-cs/JB-numerical-python/issues/new?title=Issue%20on%20page%20%2F01-Python-Fundamentals.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -992,13 +994,7 @@ Phone Phone Phone
 </div>
 </div>
 </div>
-<div class="alert alert-info">
-<p><b>Your turn:</b></p>
-<ol class="simple">
-<li><p>Make a list, a dictionary, and a string, each with 5+ elements</p></li>
-<li><p>Retrieve elements from these variables using the appropriate indexing.</p></li>
-</ol>
-</div></section>
+</section>
 </section>
 <section id="flow-control">
 <h2>Flow control<a class="headerlink" href="#flow-control" title="Permalink to this headline">#</a></h2>
@@ -1065,9 +1061,7 @@ Phone Phone Phone
 <li><p>Greater than or equal to: <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
 </ul>
 <p>Boolean combinations:  You can evaluate more than one True/False condition in the statements by combining conditions with <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code></p>
-<div class="alert alert-info">
-<p><b>Your turn:</b> Try assigning different values to <code class="docutils literal notranslate"><span class="pre">claim</span></code> below and re-executing the cell several times to make sure you can follow the logic of the resulting print statement.  Intersperse other conditions as well as boolean combinations.</p>
-</div><div class="cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Switch the value of claim to check the logic</span>
 
@@ -1142,9 +1136,7 @@ Phone Phone Phone
 </div>
 </div>
 </div>
-<div class="alert alert-info">
-<p><b>Your turn:</b> Create a for loop that prints the sequence 1, 2, 5</p>
-</div></section>
+</section>
 </section>
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
@@ -1260,26 +1252,6 @@ Phone Phone Phone
 <span class="n">rate</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">annual_contribution</span> <span class="o">=</span> <span class="mi">6500</span>
 <span class="n">f2digit</span><span class="p">(</span><span class="n">principal</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">annual_contribution</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="alert alert-info">
-<p><b>Your turn:</b></p>
-<ol class="simple">
-<li><p>Write your own function definition</p></li>
-<li><p>Call your function several times to make sure it works</p></li>
-</ol>
-</div><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter your code for #1 here:</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter your code for #2 here:</span>
 </pre></div>
 </div>
 </div>
@@ -1436,7 +1408,7 @@ Phone Phone Phone
     {
         requestKernel: true,
         binderOptions: {
-            repo: "abigailmori/JB-numerical-python",
+            repo: "oarc-cs/JB-numerical-python",
             ref: "main",
         },
         codeMirrorConfig: {
